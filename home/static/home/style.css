@@ -1,8 +1,40 @@
 h1{
-   font-size: 50px;
+   font-size: 32px;
 }
 
 .page{
 	width: 90%;
 	margin: 0 auto;
 }
+
+body,
+h1 {
+    font-family: "Raleway", sans-serif;
+}
+body,
+html{
+    height: 100%; 
+    background-color: #FFF;
+    margin: 0;
+}
+.logo{
+    width: 20%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+.future_page{
+    position: relative;
+    top: 10%;
+}
+.future_page__title{
+    text-align: center;
+    margin-top: 12px;
+}
+.divider{
+    width: 20%;
+    opacity: 0.5;
+    margin: 0 auto;
+    margin-top: 12px;
+}
+

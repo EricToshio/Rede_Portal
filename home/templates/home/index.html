@@ -1,7 +1,39 @@
-{% load static %}
-
+ {% load static %}
+<!--
 <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}" />
 <div class="page">
     <h1> site bolada1 </h1>
     <img src="{% static 'home/images/casd.png' %}">
-</div>
+</div> -->
+
+
+<!DOCTYPE html>
+<html>
+    <title>Rede_Portal</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}" />
+    
+    <body onload="typeWriter()">
+        <div class="future_page">
+            <img class="logo" src="{% static 'home/images/logo_redecasd.jpg' %}">
+            <hr class="divider">
+            <h1 id="typewriter_text" class="future_page__title"></h1>
+        </div>
+    </body>
+</html>
+
+<script type="text/javascript">
+    var i = 0;
+    var txt = 'Em Breve...'; 
+    var speed = 90; 
+
+    function typeWriter() {
+      if (i < txt.length) {
+        document.getElementById("typewriter_text").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+</script>
