@@ -15,25 +15,20 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}" />
     
-    <body onload="typeWriter()">
+    <body>
         <div class="future_page">
             <img class="logo" src="{% static 'home/images/logo_portalH8.png' %}">
             <hr class="divider">
             <h1 id="typewriter_text" class="future_page__title"></h1>
         </div>
+        <div class="news-wrapper">
+            {% for news in news_list %}
+            <div class="news-item">
+                <p>{{ news.iniciativa_name }}</p>
+                <p>{{ news.pub_date }}</p>
+                <p>{{ news.news_text }}</p>
+            </div>
+            {% endfor %}
+        </div>
     </body>
 </html>
-
-<script type="text/javascript">
-    var i = 0;
-    var txt = 'Em Breve...';
-    var speed = 90; 
-
-    function typeWriter() {
-      if (i < txt.length) {
-        document.getElementById("typewriter_text").innerHTML += txt.charAt(i);
-        i++;
-        setTimeout(typeWriter, speed);
-      }
-    }
-</script>

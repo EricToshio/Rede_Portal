@@ -1,5 +1,5 @@
 h1{
-   font-size: 32px;
+   font-size: rem(32);
 }
 
 .page{
@@ -18,23 +18,37 @@ html{
     margin: 0;
 }
 .logo{
-    width: 35%;
+    width: 25%;
     height: auto;
     margin: 0 auto;
-    display: block;
+    /*display: block;*/
 }
 .future_page{
     position: relative;
-    top: 35%;
+    /*top: 35%;*/
 }
 .future_page__title{
     text-align: center;
     margin-top: 12px;
 }
 .divider{
-    width: 20%;
+    width: 100%;
     opacity: 0.5;
     margin: 0 auto;
     margin-top: 12px;
+}
+
+.news-wrapper{
+    text-align: left;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.news-item{
+    border: 1px solid #000;
+    border-radius: 3px;
+    box-shadow: 2px 2px #b3b3b3;
+    margin: 5px;
+    padding: 5px;
 }
 
