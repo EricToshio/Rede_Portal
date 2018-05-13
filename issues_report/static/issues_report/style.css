@@ -130,6 +130,8 @@ input[type=submit]:hover {
     margin: 2px;
     border: 1px solid #000;
     border-radius: 3px;
+    margin-bottom: 12px;
+    padding: 8px;
 }
 
 .public-problems-description{
