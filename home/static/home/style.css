@@ -17,16 +17,41 @@ html{
     background-color: #FFF;
     margin: 0;
 }
-.logo{
+.header__logo{
     width: 25%;
     height: auto;
-    margin: 0 auto;
+    /*margin: 0 auto;*/
+    display: middle;
     /*display: block;*/
 }
-.future_page{
+.header{
     position: relative;
+    background-color: #8ae691;
     /*top: 35%;*/
+    border-bottom: 1px solid #000;
 }
+
+.issues-report-wrapper{
+    float: right;
+    width: 30%;
+    border: 1px solid #000;
+    border-radius: 3px;
+}
+
+.issues-report-wrapper__button{
+    margin: 0 auto;
+    border: 1px solid #000;
+    padding: 12px;
+    text-align: center;
+    border-radius: 16px;
+    background-color: #FFF;
+    display: block;
+}
+
+.issues-report-wrapper__button:hover{
+    background-color: #b5b5b5;
+}
+
 .future_page__title{
     text-align: center;
     margin-top: 12px;
@@ -35,7 +60,6 @@ html{
     width: 100%;
     opacity: 0.5;
     margin: 0 auto;
-    margin-top: 12px;
 }
 
 .news-wrapper{
@@ -50,5 +74,13 @@ html{
     box-shadow: 2px 2px #b3b3b3;
     margin: 5px;
     padding: 5px;
+}
+
+.news-item__tag{
+    display: inline;
+    padding: 8px;
+    border-radius: 2px;
+    background-color: #a0bae9;
+    /*height: 45px;*/
 }
 

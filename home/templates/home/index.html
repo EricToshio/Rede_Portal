@@ -1,11 +1,5 @@
- {% load static %}
-<!--
-<link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}" />
-<div class="page">
-    <h1> site bolada1 </h1>
-    <img src="{% static 'home/images/casd.png' %}">
-</div> -->
 
+{% load static %}
 
 <!DOCTYPE html>
 <html>
@@ -14,21 +8,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}" />
-    
     <body>
-        <div class="future_page">
-            <img class="logo" src="{% static 'home/images/logo_portalH8.png' %}">
-            <hr class="divider">
-            <h1 id="typewriter_text" class="future_page__title"></h1>
+        <div class="header">
+            <img class="header__logo" src="{% static 'home/images/logo_portalH8.png' %}">
+            <div class="issues-report-wrapper">
+                <button class="issues-report-wrapper__button">Reportar problema</button>
+            </div>
         </div>
+        <!-- <hr class="divider"> -->
         <div class="news-wrapper">
+            <h1>Últimas novidades</h1>
             {% for news in news_list %}
             <div class="news-item">
-                <p>{{ news.iniciativa_name }}</p>
-                <p>{{ news.pub_date }}</p>
                 <p>{{ news.news_text }}</p>
+                <p>{{ news.pub_date }}</p>
+                <div class="news-item__tag">
+                    {{ news.iniciativa_name }}
+                </div>
             </div>
             {% endfor %}
         </div>
     </body>
-</html>
+</html> 
