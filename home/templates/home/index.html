@@ -12,7 +12,9 @@
         <div class="header">
             <img class="header__logo" src="{% static 'home/images/logo_portalH8.png' %}">
             <div class="issues-report-wrapper">
-                <button class="issues-report-wrapper__button">Reportar problema</button>
+                <form action="{% url 'issues_report:index' %}">
+                    <input type="submit" value="Reportar problema" />
+                </form>
             </div>
         </div>
         <!-- <hr class="divider"> -->

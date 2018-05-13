@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+    <title>Rede_Portal</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" type="text/css" href="{% static 'issues_report/style.css' %}" />
+    <body>
+        <div class="header">
+            <img class="header__logo" src="{% static 'issues_report/images/logo_portalH8.png' %}">
+
+        </div>
+        <div class="report-form-section">
+            <div class="report-form-section__form">
+                <form action="">
+                    <label for="fname">Nome completo</label>
+                    <input type="text" id="name" name="nome" placeholder="Seu nome completo...">
+
+                    <label for="address">Apartamento</label>
+                    <input type="text" id="address" name="endereco" placeholder="Informe o número do seu apartamento...">
+                    <label for="iniciativa">Iniciativa</label>
+                    <select id="iniciativa" name="iniciativa">
+                        <option value="redecasd">RedeCasd</option>
+                        <option value="casd">CASD</option>
+                        <option value="doo">DOO</option>
+                    </select>
+
+                    <label for="problem">Descrição do problema</label>
+                    <input type="text" id="problem" name="problem" placeholder="Descreva o problema encontrado...">
+                    
+                    <label for="public">Deseja tornar esse problema visível a todos os usuários?</label>
+                    <input type="radio" name="public" value="yes">Sim
+                    <input type="radio" name="public" value="no" checked>Não<br>
+
+                    <input type="submit" value="Enviar">
+                </form>
+            </div>
+        </div>
+
+        <div class="public-problems">
+            <div class="public-problems-wrapper">
+                <div class="public-problems-description">
+                    <p>A rede está muito lenta no bloco C</p>
+                </div>
+                <hr>
+                <div class="public-problems-up">
+                    X pessoas possuem esse problema
+                </div>
+                <div>
+                    <button>Eu também tenho esse problema</button>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
