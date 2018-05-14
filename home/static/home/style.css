@@ -181,6 +181,25 @@ html{
     margin-bottom: 12px;
 }
 
+.home-news-box__img-wrapper{
+    width: 112px;
+    height: 112px;
+    overflow: hidden;
+    float: left;
+    padding: 6px;
+}
+
+.home-news-box__img{
+    height: 100%;
+    width: auto;
+}
+
+.home-news-box--small > p{
+    float: left;
+    margin: 5px;
+    text-align: center;
+}
+
 .divider > hr{
     color: #f1f1f1;
 }
