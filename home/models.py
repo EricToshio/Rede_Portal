@@ -18,6 +18,8 @@ class News(models.Model):
     # def __str__(self):
     #     return self.question_text
     
+    def pic_url(self):
+        return self.pic.url[4:]
 
 
 # class Choice(models.Model):

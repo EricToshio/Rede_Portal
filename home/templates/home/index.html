@@ -22,7 +22,7 @@
             <h1>Últimas novidades</h1>
             {% for news in news_list %}
             <div class="news-item">
-                <img src="{{news.pic}}" />
+                <img src="{{news.pic_url}}" />
                 <p>{{ news.text }}</p>
                 <p>{{ news.pub_date }}</p>
                 <div class="news-item__tag">
