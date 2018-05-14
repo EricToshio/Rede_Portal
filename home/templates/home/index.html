@@ -22,7 +22,9 @@
             <h1>Últimas novidades</h1>
             {% for news in news_list %}
             <div class="news-item">
-                <img src="{{news.pic_url}}" />
+                <h2>{{ news.title }}</h2>
+                <h4>{{ news.sub_title }}</h4>
+                <img src="{{ news.pic_url }}" height="128" width="128"/>
                 <p>{{ news.text }}</p>
                 <p>{{ news.pub_date }}</p>
                 <div class="news-item__tag">
