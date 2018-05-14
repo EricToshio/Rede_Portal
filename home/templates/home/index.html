@@ -1,11 +1,5 @@
- {% load static %}
-<!--
-<link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}" />
-<div class="page">
-    <h1> site bolada1 </h1>
-    <img src="{% static 'home/images/casd.png' %}">
-</div> -->
 
+{% load static %}
 
 <!DOCTYPE html>
 <html>
@@ -14,26 +8,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}" />
-    
-    <body onload="typeWriter()">
-        <div class="future_page">
-            <img class="logo" src="{% static 'home/images/logo_portalH8.png' %}">
-            <hr class="divider">
-            <h1 id="typewriter_text" class="future_page__title"></h1>
+    <body>
+        <div class="header">
+            <img class="header__logo" src="{% static 'home/images/logo_portalH8.png' %}">
+            <div class="issues-report-wrapper">
+                <form action="{% url 'issues_report:index' %}">
+                    <input type="submit" value="Reportar problema" />
+                </form>
+            </div>
+        </div>
+        <!-- <hr class="divider"> -->
+        <div class="news-wrapper">
+            <h1>Últimas novidades</h1>
+            {% for news in news_list %}
+            <div class="news-item">
+                <h2>{{ news.title }}</h2>
+                <h4>{{ news.sub_title }}</h4>
+                <img src="{{ news.pic_url }}" height="128" width="128"/>
+                <p>{{ news.text }}</p>
+                <p>{{ news.pub_date }}</p>
+                <div class="news-item__tag">
+                    {{ news.iniciativa_name }}
+                </div>
+            </div>
+            {% endfor %}
         </div>
     </body>
-</html>
-
-<script type="text/javascript">
-    var i = 0;
-    var txt = 'Em Breve...';
-    var speed = 90; 
-
-    function typeWriter() {
-      if (i < txt.length) {
-        document.getElementById("typewriter_text").innerHTML += txt.charAt(i);
-        i++;
-        setTimeout(typeWriter, speed);
-      }
-    }
-</script>
+</html> 
