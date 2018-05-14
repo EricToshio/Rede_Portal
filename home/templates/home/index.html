@@ -9,14 +9,94 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}" />
     <body>
-        <div class="header">
-            <img class="header__logo" src="{% static 'home/images/logo_portalH8.png' %}">
-            <div class="issues-report-wrapper">
+
+    <div class="home-page">
+        <div class="home-header">
+            <div class="home-header__login">
+                <!-- login -->
+            </div>
+            <div class="home-header__logo">
+                <img class="home-header__logo--img"  src="{% static 'home/images/logo_portalH8.png' %}">
+            </div>
+            <div class="home-header__search">
+                <!-- busca -->
+            </div>
+
+            <!--<div class="issues-report-wrapper">
                 <form action="{% url 'issues_report:index' %}">
                     <input type="submit" value="Reportar problema" />
                 </form>
+            </div> -->
+        </div>
+        <div class="home-navbar">
+            <ul class="home-navbar__menu">
+                <li>Home</li>
+                <li>News</li>
+                <li>InstaRancho</li>
+                <li>Iniciativas</li>
+                <li>Calendário</li>
+            </ul>
+        </div>
+
+        <div class="home-news__title">
+            <h1>News</h1>
+        </div>
+        <div class="home-news">
+            <div class="home-news-column">
+                <div class="home-news-box">
+                    <!-- first -->
+                </div>
+            </div>
+            <div class="home-news-column home-news-column--right">
+                <div class="home-news-box home-news-box--small">
+                    <!-- first -->
+                </div>
+                <div class="home-news-box home-news-box--small">
+                    <!-- first -->
+                </div>
+                <div class="home-news-box home-news-box--small">
+                    <!-- first -->
+                </div>
             </div>
         </div>
+
+        <div class="home-calendar__title">
+            <h1>Calendário Semanal</h1>
+        </div>
+        <div class="home-calendar">
+
+             <table class="home-calendar-table">
+              <tr>
+                <td class="home-calendar-table__cell">Domingo</td>
+                <td class="home-calendar-table__cell">Segunda</td>
+                <td class="home-calendar-table__cell">Terça</td>
+                <td class="home-calendar-table__cell">Quarta</td>
+                <td class="home-calendar-table__cell">Quinta</td>
+                <td class="home-calendar-table__cell">Sexta</td>
+                <td class="home-calendar-table__cell">Sábado</td>
+              </tr>
+           
+            </table> 
+        </div>
+
+        <div class="home-instarancho__title">
+            <h1>Cardápio do rancho</h1>
+        </div>
+        <div class="home-instarancho">
+            <table class="home-calendar-table">
+              <tr>
+                <td class="home-calendar-table__cell">Domingo</td>
+                <td class="home-calendar-table__cell">Segunda</td>
+                <td class="home-calendar-table__cell">Terça</td>
+                <td class="home-calendar-table__cell">Quarta</td>
+                <td class="home-calendar-table__cell">Quinta</td>
+                <td class="home-calendar-table__cell">Sexta</td>
+                <td class="home-calendar-table__cell">Sábado</td>
+              </tr>
+           
+            </table> 
+        </div>
+
         <!-- <hr class="divider"> -->
         <div class="news-wrapper">
             <h1>Últimas novidades</h1>
@@ -30,5 +110,6 @@
             </div>
             {% endfor %}
         </div>
+    </div>
     </body>
 </html> 

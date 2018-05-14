@@ -84,3 +84,144 @@ html{
     /*height: 45px;*/
 }
 
+
+.home-page{
+    width: 75%;
+    margin: 0 auto;
+}
+
+.home-header{
+    /*background-color: #b5b5b5;*/
+    height: 100px;
+    border-bottom: 2px solid #f1f1f1;
+}
+
+.home-header__login{
+    width: 25%;
+    float: left;
+    height: 100%;
+    text-align: center;
+}
+
+.home-header__logo{
+    width: 50%;
+    float: left;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.home-header__logo--img{
+    height: 100%;
+    width: auto;
+}
+
+.home-header__search{
+    width: 25%;
+    float: left;
+    height: 100%;
+    text-align: center;
+}
+
+.home-navbar{
+    /*background-color: #b5f5f5;*/
+    height: 50px;
+}
+
+.home-navbar__menu{
+    font-size: 24px;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+}
+
+.home-navbar__menu > li{
+    display: inline;
+    margin: 15px;
+    line-height: 2;
+}
+
+.home-navbar__menu li:hover{
+    background-color: #f1f1f1;
+}
+
+.home-news__title{
+    font-size: 12px;
+    border-bottom: 2px solid #f1f1f1;
+}
+
+.home-news{
+    height: 400px;
+    margin-bottom: 48px;
+}
+
+.home-news-column{
+    width: 45%;
+    float: left;
+    height: 100%;
+    display: inline;
+    padding: 12px;
+}
+
+.home-news-column--right{
+    float: right;
+}
+
+.home-news-box{
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+    box-sizing: border-box;
+    border: 2px solid #f1f1f1;
+}
+
+.home-news-box--small{
+    height: 30%;
+    margin-bottom: 12px;
+}
+
+.divider > hr{
+    color: #f1f1f1;
+}
+
+
+.home-calendar__title{
+    font-size: 12px;
+    border-bottom: 2px solid #f1f1f1;
+}
+
+.home-calendar{
+    height: 170px;
+    margin-bottom: 48px;
+}
+
+.home-calendar-table{
+    margin-top: 12px;
+    height: 50px;
+    width: 100%;
+}
+
+.home-calendar-table__cell{
+    width: 14%;
+    height: 150px;
+    border: 1px solid #f1f1f1;
+    text-align: center;
+    align-items: middle;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    margin: 4px;
+}
+
+.home-calendar-table__cell:hover{
+    background-color: #f1f1f1;
+}
+
+.home-instarancho__title{
+    font-size: 12px;
+    border-bottom: 2px solid #f1f1f1;
+}
+
+.home-instarancho{
+    height: 400px;
+    margin-bottom: 48px;
+}
