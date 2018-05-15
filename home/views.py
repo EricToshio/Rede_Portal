@@ -8,5 +8,6 @@ from django.urls import reverse
 from .models import News
 
 def index(request):
-    context = {'news_list': News.objects.order_by('-pub_date')}
+    context = {'news_list': News.objects.order_by('-pub_date')[1:4],
+    		   'main_news': News.objects.order_by('-pub_date')[0]}
     return render(request, 'home/index.html', context)

@@ -42,32 +42,36 @@
             <h1>News</h1>
         </div>
         <div class="home-news">
+
+
             <div class="home-news-column">
                 <div class="home-news-box">
-                    <!-- first -->
+                    <div class="home-news-box-content">
+                        <div class="home-news-box-content--img">
+                            <img src="{{main_news.pic_url}}">
+                        </div>
+                        <h1>{{main_news.title}}</h1>
+                        <p>{{main_news.sub_title}}</p>
+                    </div>
                 </div>
             </div>
+
+
+
             <div class="home-news-column home-news-column--right">
-                <div class="home-news-box home-news-box--small">
-                    <div class="home-news-box__img-wrapper">
-                        <img class="home-news-box__img"  src="{% static 'home/images/logo_portalH8.png' %}">
+                {% for news in news_list %}
+                    <div class="home-news-box home-news-box--small">
+                        <div class="home-news-box__img-wrapper">
+                            <img class="home-news-box__img"  src="{{news.pic_url}}">
+                        </div>
+                        <div class="home-news-box__paragraph-wrapper">
+                            <p> {{ news.title }} </p>
+                        </div>
                     </div>
-                    <p> titulo </p>
-                </div>
-                <div class="home-news-box home-news-box--small">
-                    <div class="home-news-box__img-wrapper">
-                        <img class="home-news-box__img"  src="{% static 'home/images/logo_portalH8.png' %}">
-                    </div>
-                    <p> titulo </p>
-                </div>
-                <div class="home-news-box home-news-box--small">
-                    <div class="home-news-box__img-wrapper">
-                        <img class="home-news-box__img"  src="{% static 'home/images/logo_portalH8.png' %}">
-                    </div>
-                    <p> titulo </p>
-                </div>
+                {% endfor %}
             </div>
         </div>
+            
 
         <div class="home-calendar__title">
             <h1>Calendário Semanal</h1>
