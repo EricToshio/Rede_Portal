@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <title>Rede_Portal</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}" />
+    <body>
+
+    <div class="home-page">
+        <div class="home-header">
+            <div class="home-header__login">
+                <!-- login -->
+            </div>
+            <div class="home-header__logo">
+                <img class="home-header__logo--img"  src="{% static 'home/images/logo_portalH8.png' %}">
+            </div>
+            <div class="home-header__search">
+                <!-- busca -->
+            </div>
+
+            <!--<div class="issues-report-wrapper">
+                <form action="{% url 'issues_report:index' %}">
+                    <input type="submit" value="Reportar problema" />
+                </form>
+            </div> -->
+        </div>
+        <div class="home-navbar">
+            <ul class="home-navbar__menu">
+                <li>Home</li>
+                <li>News</li>
+                <li>InstaRancho</li>
+                <li>Iniciativas</li>
+                <li>Calendário</li>
+            </ul>
+        </div>
+
+        <div class="home-news__title">
+            <h1>News</h1>
+        </div>
+
+{% include page_template %}
+
+{% block js %}
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="{% static 'home/el-pagination.js' %}"></script>
+	<script>
+        $.endlessPaginate({
+        	paginateOnScroll: true,
+        });
+    </script>
+{% endblock %}
