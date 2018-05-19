@@ -1,12 +1,9 @@
 {% load static %}
 {% load bootstrap4 %}
 {% load bootstrap3 %}
-
-
-
 <style type="text/css">
 body{
-  padding-bottom: 200px;
+padding-bottom: 200px;
 }
 .row-md-6{
 height: 50%;
@@ -21,101 +18,25 @@ padding-bottom: 5px;
 .image-news-cover--padding-top{
 padding-top: 5px;
 }
-
-.home__carousel-item{
-  height: 250px !important;
-  /*border: 1px solid #000;*/
-  padding: 12px;
+.navbar--center{
+  margin: 0 auto;
 }
-
-
-@media (min-width: 768px) {
-
-    /* show 3 items */
-    .carousel-inner .active,
-    .carousel-inner .active + .carousel-item,
-    .carousel-inner .active + .carousel-item + .carousel-item,
-    .carousel-inner .active + .carousel-item + .carousel-item + .carousel-item  {
-        display: block;
-    }
-    
-    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
-    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
-    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item,
-    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item + .carousel-item {
-        transition: none;
-    }
-    
-    .carousel-inner .carousel-item-next,
-    .carousel-inner .carousel-item-prev {
-      position: relative;
-      transform: translate3d(0, 0, 0);
-    }
-    
-    .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
-        position: absolute;
-        top: 0;
-        right: -25%;
-        z-index: -1;
-        display: block;
-        visibility: visible;
-    }
-    
-    /* left or forward direction */
-    .active.carousel-item-left + .carousel-item-next.carousel-item-left,
-    .carousel-item-next.carousel-item-left + .carousel-item,
-    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
-    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item,
-    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
-        position: relative;
-        transform: translate3d(-100%, 0, 0);
-        visibility: visible;
-    }
-    
-    /* farthest right hidden item must be abso position for animations */
-    .carousel-inner .carousel-item-prev.carousel-item-right {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        display: block;
-        visibility: visible;
-    }
-    
-    /* right or prev direction */
-    .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
-    .carousel-item-prev.carousel-item-right + .carousel-item,
-    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
-    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item,
-    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
-        position: relative;
-        transform: translate3d(100%, 0, 0);
-        visibility: visible;
-        display: block;
-        visibility: visible;
-    }
-
-}
-
-
-
-
 
 </style>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Portfolio Item - Start Bootstrap Template</title>
+    <title>Portal H8</title>
     <!-- Bootstrap core CSS -->
     <link href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="{% static "css/portfolio-item.css" %}" rel="stylesheet">
     <link href="{% static "css/hover-box.css" %}" rel="stylesheet">
-    <link href="{% static "css/carousel-box.css" %}" rel="stylesheet">
+    <link href="{% static "css/home-carousel.css" %}" rel="stylesheet">
   </head>
   <body>
     <!-- Navigation -->
@@ -127,7 +48,7 @@ padding-top: 5px;
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
+        <div class="collapse navbar-collapse navbar--center" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
               <a class="nav-link" href="#">Home
@@ -135,7 +56,7 @@ padding-top: 5px;
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="#">Iniciativas</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Services</a>
@@ -147,6 +68,10 @@ padding-top: 5px;
         </div>
       </div>
     </nav>
+
+
+
+
     <!-- Page Content -->
     <div class="container">
       <!-- Portfolio Item Heading -->
@@ -156,253 +81,233 @@ padding-top: 5px;
       <div class="row">
         <div class="col-md-6">
           <div class="box-hover">
-            <img class="image-expand" src="{% static "home/images/lorem1.jpg" %}" alt="Avatar" class="image">
+            <img class="image-expand" src="{{main_news.pic_url}}" %}" alt="Avatar" class="image">
             <div class="overlay">
               <div class="text">
-                <h1>Titulo Titulo Titulo Titulo Titulo TituloTitulo</h1>
+                <h1>{{main_news.title}}</h1>
                 <h2>Subtitulo</h2>
                 <p>descricao</p>
               </div>
             </div>
           </div>
         </div>
+
         <div class="col-md-3">
-          <div class="row-md-6 image-news-cover--padding-bottom">
-            <div class="box-hover box-hover--height-100">
-              <img class="image-expand" src="{% static "home/images/lorem1.jpg" %}" alt="Avatar" class="image">
-              <div class="overlay">
-                <div class="text">Hello World</div>
+          {% for news in news_list_1 %}
+            <div class="row-md-6 image-news-cover--padding-bottom">
+              <div class="box-hover box-hover--height-100">
+                <img class="image-expand" src="{{news.pic_url}}" class="image">
+                <div class="overlay">
+                  <div class="text"> <h1>{{ news.title }}</h1> </div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="row-md-6 image-news-cover--padding-top">
-            <div class="box-hover box-hover--height-100">
-              <img class="image-expand" src="{% static "home/images/lorem1.jpg" %}" alt="Avatar" class="image">
-              <div class="overlay">
-                <div class="text">Hello World</div>
-              </div>
-            </div>
-          </div>
+          {% endfor %}
         </div>
         <div class="col-md-3">
-          <div class="row-md-6 image-news-cover--padding-bottom">
-            <div class="box-hover box-hover--height-100">
-              <img class="image-expand" src="{% static "home/images/lorem1.jpg" %}" alt="Avatar" class="image">
-              <div class="overlay">
-                <div class="text">Hello World</div>
+          {% for news in news_list_2 %}
+            <div class="row-md-6 image-news-cover--padding-bottom">
+              <div class="box-hover box-hover--height-100">
+                <img class="image-expand" src="{{news.pic_url}}" class="image">
+                <div class="overlay">
+                  <div class="text"> <h1>{{ news.title }}</h1> </div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="row-md-6 image-news-cover--padding-top">
-            <div class="box-hover box-hover--height-100">
-              <img class="image-expand" src="{% static "home/images/lorem1.jpg" %}" alt="Avatar" class="image">
-              <div class="overlay">
-                <div class="text">Hello World</div>
-              </div>
-            </div>
-          </div>
-        </div>
+          {% endfor %}
       </div>
       <!-- /.row -->
       <!-- Related Projects Row -->
       <hr>
       <h3 class="my-4">Oportunidades CEE</h3>
-<!--       <div class="row">
-        <div class="col-md-3 col-sm-6 mb-4">
-          <a href="#">
-            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-          </a>
-        </div>
-        <div class="col-md-3 col-sm-6 mb-4">
-          <a href="#">
-            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-          </a>
-        </div>
-        <div class="col-md-3 col-sm-6 mb-4">
-          <a href="#">
-            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-          </a>
-        </div>
-        <div class="col-md-3 col-sm-6 mb-4">
-          <a href="#">
-            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-          </a>
-        </div>
-      </div> -->
-
-
-
-
-<div class="container-fluid">
-    <div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="9000">
-        <div class="carousel-inner row w-100 mx-auto" role="listbox">
-            <div class="carousel-item home__carousel-item col-md-3 active">
+      <div class="container-fluid">
+        <div id="carousel-oportunities" class="carousel slide" data-ride="carousel" data-interval="9000">
+          <div class="carousel-inner row w-100 mx-auto" role="listbox">
+            <div class="carousel-item js-carousel-item home__carousel-item col-md-3 active">
+              <div class="home__carousel-item__card">
                 <img class="img-fluid mx-auto d-block" src="{% static "home/images/lorem2.jpg" %}" alt="slide 2">
-                <h5> Descrição: </h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porta augue urna. Quisque in tortor ligula. Sed placerat mi metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; </p>
+                <div class="home-carousel-card-text-oportunities">
+                  <ul class="home-carousel-list">
+                    <li><h5 class="home-carousel-list__title">Área:</h5> Financeiro</li>
+                    <li><h5 class="home-carousel-list__title">Local:</h5> Cineclube</li>
+                    <li><h5 class="home-carousel-list__title">Data:</h5> 27/01/2980 </li>
+                    <li><h5 class="home-carousel-list__title">Descrição:</h5> Oportunidade para aqueles que procuram fundos de investimento.</li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            <div class="carousel-item home__carousel-item  col-md-3">
+            <div class="carousel-item js-carousel-item home__carousel-item col-md-3">
+              <div class="home__carousel-item__card">
                 <img class="img-fluid mx-auto d-block" src="{% static "home/images/lorem3.jpg" %}" alt="slide 2">
-                <h5> Descrição: </h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porta augue urna. Quisque in tortor ligula. Sed placerat mi metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; </p>
+                <div class="home-carousel-card-text-oportunities">
+                  <ul class="home-carousel-list">
+                    <li><h5 class="home-carousel-list__title">Área:</h5> Financeiro</li>
+                    <li><h5 class="home-carousel-list__title">Local:</h5> Cineclube</li>
+                    <li><h5 class="home-carousel-list__title">Data:</h5> 27/01/2980 </li>
+                    <li><h5 class="home-carousel-list__title">Descrição:</h5> Oportunidade para aqueles que procuram fundos de investimento.</li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            <div class="carousel-item home__carousel-item  col-md-3">
+            <div class="carousel-item js-carousel-item home__carousel-item col-md-3">
+              <div class="home__carousel-item__card">
                 <img class="img-fluid mx-auto d-block" src="{% static "home/images/lorem4.jpg" %}" alt="slide 2">
-                <h5> Descrição: </h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porta augue urna. Quisque in tortor ligula. Sed placerat mi metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; </p>
+                <div class="home-carousel-card-text-oportunities">
+                  <ul class="home-carousel-list">
+                    <li><h5 class="home-carousel-list__title">Área:</h5> Financeiro</li>
+                    <li><h5 class="home-carousel-list__title">Local:</h5> Cineclube</li>
+                    <li><h5 class="home-carousel-list__title">Data:</h5> 27/01/2980 </li>
+                    <li><h5 class="home-carousel-list__title">Descrição:</h5> Oportunidade para aqueles que procuram fundos de investimento.</li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            <div class="carousel-item home__carousel-item  col-md-3">
+            <div class="carousel-item js-carousel-item home__carousel-item col-md-3">
+              <div class="home__carousel-item__card">
                 <img class="img-fluid mx-auto d-block" src="{% static "home/images/lorem5.jpg" %}" alt="slide 2">
-                <h5> Descrição: </h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porta augue urna. Quisque in tortor ligula. Sed placerat mi metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; </p>
+                <div class="home-carousel-card-text-oportunities">
+                  <ul class="home-carousel-list">
+                    <li><h5 class="home-carousel-list__title">Área:</h5> Financeiro</li>
+                    <li><h5 class="home-carousel-list__title">Local:</h5> Cineclube</li>
+                    <li><h5 class="home-carousel-list__title">Data:</h5> 27/01/2980 </li>
+                    <li><h5 class="home-carousel-list__title">Descrição:</h5> Oportunidade para aqueles que procuram fundos de investimento.</li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            <div class="carousel-item home__carousel-item  col-md-3">
+            <div class="carousel-item js-carousel-item home__carousel-item col-md-3">
+              <div class="home__carousel-item__card">
                 <img class="img-fluid mx-auto d-block" src="{% static "home/images/lorem6.jpg" %}" alt="slide 2">
-                <h5> Descrição: </h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porta augue urna. Quisque in tortor ligula. Sed placerat mi metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; </p>
+                <div class="home-carousel-card-text-oportunities">
+                  <ul class="home-carousel-list">
+                    <li><h5 class="home-carousel-list__title">Área:</h5> Financeiro</li>
+                    <li><h5 class="home-carousel-list__title">Local:</h5> Cineclube</li>
+                    <li><h5 class="home-carousel-list__title">Data:</h5> 27/01/2980 </li>
+                    <li><h5 class="home-carousel-list__title">Descrição:</h5> Oportunidade para aqueles que procuram fundos de investimento.</li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            <div class="carousel-item home__carousel-item  col-md-3">
+            <div class="carousel-item js-carousel-item home__carousel-item col-md-3">
+              <div class="home__carousel-item__card">
                 <img class="img-fluid mx-auto d-block" src="{% static "home/images/lorem7.jpg" %}" alt="slide 2">
-                <h5> Descrição: </h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porta augue urna. Quisque in tortor ligula. Sed placerat mi metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; </p>
+                <div class="home-carousel-card-text-oportunities">
+                  <ul class="home-carousel-list">
+                    <li><h5 class="home-carousel-list__title">Área:</h5> Financeiro</li>
+                    <li><h5 class="home-carousel-list__title">Local:</h5> Cineclube</li>
+                    <li><h5 class="home-carousel-list__title">Data:</h5> 27/01/2980 </li>
+                    <li><h5 class="home-carousel-list__title">Descrição:</h5> Oportunidade para aqueles que procuram fundos de investimento.</li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            <div class="carousel-item home__carousel-item  col-md-3">
-                <img class="img-fluid mx-auto d-block" src="//placehold.it/600x400?text=7" alt="slide 7">
-                <h5> Descrição: </h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porta augue urna. Quisque in tortor ligula. Sed placerat mi metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; </p>
-            </div>
-            <div class="carousel-item home__carousel-item  col-md-3">
-                <img class="img-fluid mx-auto d-block" src="//placehold.it/600x400?text=8" alt="slide 7">
-                <h5> Descrição: </h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porta augue urna. Quisque in tortor ligula. Sed placerat mi metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; </p>
-            </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
-            <i class="fa fa-chevron-left fa-lg text-muted"></i>
+          </div>
+          <a class="carousel-control-prev home-carousel-control home-carousel-control--previous" href="#carousel-oportunities" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next text-faded" href="#carouselExample" role="button" data-slide="next">
-            <i class="fa fa-chevron-right fa-lg text-muted"></i>
+          </a>
+          <a class="carousel-control-next home-carousel-control home-carousel-control--next" href="#carousel-oportunities" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
-        </a>
-    </div>
-
-</div>
-
-
-<hr>
-<h3 class="my-4">Eventos próximos</h3>
-<div class="container-fluid">
-    <div id="carouselExample2" class="carousel slide" data-ride="carousel" data-interval="9000">
-        <div class="carousel-inner row w-100 mx-auto" role="listbox">
-            <div class="carousel-item home__carousel-item col-md-3 active">
-                <img class="img-fluid mx-auto d-block" src="{% static "home/images/encontrinho.jpg" %}" alt="slide 2">
-                <h5> Descrição: </h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porta augue urna. Quisque in tortor ligula. Sed placerat mi metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; </p>
-            </div>
-            <div class="carousel-item home__carousel-item  col-md-3">
-                <img class="img-fluid mx-auto d-block" src="{% static "home/images/anarquia.jpg" %}" alt="slide 2">
-                <h5> Descrição: </h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porta augue urna. Quisque in tortor ligula. Sed placerat mi metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; </p>
-            </div>
-            <div class="carousel-item home__carousel-item  col-md-3">
-                <img class="img-fluid mx-auto d-block" src="{% static "home/images/encontrinho.jpg" %}" alt="slide 2">
-                <h5> Descrição: </h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porta augue urna. Quisque in tortor ligula. Sed placerat mi metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; </p>
-            </div>
-            <div class="carousel-item home__carousel-item  col-md-3">
-                <img class="img-fluid mx-auto d-block" src="{% static "home/images/anarquia.jpg" %}" alt="slide 2">
-                <h5> Descrição: </h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porta augue urna. Quisque in tortor ligula. Sed placerat mi metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; </p>
-            </div>
-            <div class="carousel-item home__carousel-item  col-md-3">
-                <img class="img-fluid mx-auto d-block" src="{% static "home/images/encontrinho.jpg" %}" alt="slide 2">
-                <h5> Descrição: </h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porta augue urna. Quisque in tortor ligula. Sed placerat mi metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; </p>
-            </div>
-            <div class="carousel-item home__carousel-item  col-md-3">
-                <img class="img-fluid mx-auto d-block" src="{% static "home/images/anarquia.jpg" %}" alt="slide 2">
-                <h5> Descrição: </h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porta augue urna. Quisque in tortor ligula. Sed placerat mi metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; </p>
-            </div>
-            <div class="carousel-item home__carousel-item  col-md-3">
-                <img class="img-fluid mx-auto d-block" src="//placehold.it/600x400?text=7" alt="slide 7">
-                <h5> Descrição: </h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porta augue urna. Quisque in tortor ligula. Sed placerat mi metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; </p>
-            </div>
-            <div class="carousel-item home__carousel-item  col-md-3">
-                <img class="img-fluid mx-auto d-block" src="//placehold.it/600x400?text=8" alt="slide 7">
-                <h5> Descrição: </h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porta augue urna. Quisque in tortor ligula. Sed placerat mi metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; </p>
-            </div>
+          </a>
         </div>
-        <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
-            <i class="fa fa-chevron-left fa-lg text-muted"></i>
+      </div>
+      <hr>
+      <h3 class="my-4">Eventos próximos</h3>
+      <div class="container-fluid">
+        <div id="carousel-events" class="carousel slide" data-ride="carousel" data-interval="9000">
+          <div class="carousel-inner row w-100 mx-auto" role="listbox">
+            <div class="carousel-item home__carousel-item home__carousel-item--380 col-md-3 active">
+              <div class="home__carousel-item__card no-padding">
+                <img class="img-fluid mx-auto d-block" src="{% static "home/images/encontrinho.jpg" %}" alt="slide 2">
+         
+              </div>
+            </div>
+            <div class="carousel-item home__carousel-item home__carousel-item--380 col-md-3">
+              <div class="home__carousel-item__card">
+                <img class="img-fluid mx-auto d-block" src="{% static "home/images/encontrinho.jpg" %}" alt="slide 2">
+         
+              </div>
+            </div>
+            <div class="carousel-item home__carousel-item home__carousel-item--380 col-md-3">
+              <div class="home__carousel-item__card">
+                <img class="img-fluid mx-auto d-block" src="{% static "home/images/encontrinho.jpg" %}" alt="slide 2">
+             
+              </div>
+            </div>
+            <div class="carousel-item home__carousel-item home__carousel-item--380 col-md-3">
+              <div class="home__carousel-item__card">
+                <img class="img-fluid mx-auto d-block" src="{% static "home/images/encontrinho.jpg" %}" alt="slide 2">
+            
+              </div>
+            </div>
+            <div class="carousel-item home__carousel-item home__carousel-item--380 col-md-3">
+              <div class="home__carousel-item__card">
+                <img class="img-fluid mx-auto d-block" src="{% static "home/images/encontrinho.jpg" %}" alt="slide 2">
+               
+              </div>
+            </div>
+            <div class="carousel-item home__carousel-item home__carousel-item--380 col-md-3">
+              <div class="home__carousel-item__card">
+                <img class="img-fluid mx-auto d-block" src="{% static "home/images/encontrinho.jpg" %}" alt="slide 2">
+       
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev home-carousel-control home-carousel-control--previous" href="#carousel-events" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next text-faded" href="#carouselExample" role="button" data-slide="next">
-            <i class="fa fa-chevron-right fa-lg text-muted"></i>
+          </a>
+          <a class="carousel-control-next home-carousel-control home-carousel-control--next" href="#carousel-events" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
-        </a>
-    </div>
-
-</div>
-
-
-
-
-
-
-
+          </a>
+        </div>
+      </div>
 
       <!-- /.row -->
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="{% static "vendor/jquery/jquery.min.js" %}"></script>
-    <script src="{% static "vendor/bootstrap/js/bootstrap.bundle.min.js" %}"></script>
-  </body>
-</html>
-
-<script type="text/javascript">
-$('#carouselExample').on('slide.bs.carousel', function (e) {
-
-    var $e = $(e.relatedTarget);
-    var idx = $e.index();
-    var itemsPerSlide = 4;
-    var totalItems = $('.carousel-item').length;
-    
-    if (idx >= totalItems-(itemsPerSlide-1)) {
-        var it = itemsPerSlide - (totalItems - idx);
-        for (var i=0; i<it; i++) {
-            // append slides to end
-            if (e.direction=="left") {
-                $('.carousel-item').eq(i).appendTo('.carousel-inner');
-            }
-            else {
-                $('.carousel-item').eq(0).appendTo('.carousel-inner');
-            }
-        }
-    }
-});
-
-$('#carouselExample2').on('slide.bs.carousel', function (e) {
-
-    var $e = $(e.relatedTarget);
-    var idx = $e.index();
-    var itemsPerSlide = 4;
-    var totalItems = $('.carousel-item').length;
-    
-    if (idx >= totalItems-(itemsPerSlide-1)) {
-        var it = itemsPerSlide - (totalItems - idx);
-        for (var i=0; i<it; i++) {
-            // append slides to end
-            if (e.direction=="left") {
-                $('.carousel-item').eq(i).appendTo('.carousel-inner');
-            }
-            else {
-                $('.carousel-item').eq(0).appendTo('.carousel-inner');
-            }
-        }
-    }
-});
-</script>
+      <!-- Bootstrap core JavaScript -->
+      <script src="{% static "vendor/jquery/jquery.min.js" %}"></script>
+      <script src="{% static "vendor/bootstrap/js/bootstrap.bundle.min.js" %}"></script>
+    </body>
+  </html>
+  <script type="text/javascript">
+  $('#carousel-oportunities').on('slide.bs.carousel', function (e) {
+  var $e = $(e.relatedTarget);
+  var idx = $e.index();
+  var itemsPerSlide = 4;
+  var totalItems = $('.js-carousel-item').length;
+  
+  if (idx >= totalItems-(itemsPerSlide-1)) {
+  var it = itemsPerSlide - (totalItems - idx);
+  for (var i=0; i<it; i++) {
+  // append slides to end
+  if (e.direction=="left") {
+  $('.js-carousel-item').eq(i).appendTo('.carousel-inner');
+  }
+  else {
+  $('.js-carousel-item').eq(0).appendTo('.carousel-inner');
+  }
+  }
+  }
+  });
+  $('#carousel-events').on('slide.bs.carousel', function (e) {
+  var $e = $(e.relatedTarget);
+  var idx = $e.index();
+  var itemsPerSlide = 4;
+  var totalItems = $('.carousel-item').length;
+  
+  if (idx >= totalItems-(itemsPerSlide-1)) {
+  var it = itemsPerSlide - (totalItems - idx);
+  for (var i=0; i<it; i++) {
+  // append slides to end
+  if (e.direction=="left") {
+  $('.carousel-item').eq(i).appendTo('.carousel-inner');
+  }
+  else {
+  $('.carousel-item').eq(0).appendTo('.carousel-inner');
+  }
+  }
+  }
+  });
+  </script>

@@ -9,7 +9,8 @@ from el_pagination.views import AjaxListView
 from .models import News
 
 def index(request):
-    context = {'news_list': News.objects.order_by('-pub_date')[1:4],
+    context = {'news_list_1': News.objects.order_by('-pub_date')[1:3],
+               'news_list_2': News.objects.order_by('-pub_date')[3:5],
     		   'main_news': News.objects.order_by('-pub_date')[0]}
     return render(request, 'home/index.html', context)
 

@@ -15,7 +15,7 @@
 
 .overlay {
   position: absolute;
-  opacity: 0.8;
+  /*opacity: 0.8;*/
   bottom: 0;
   left: 0;
   right: 0;
@@ -25,11 +25,13 @@
   height: 25%;
   transition: .5s ease;
 }
-
-.box-hover:hover .overlay {
-  height: 100%;
+.overlay:not(h1){
+  opacity: 0.8;
 }
 
+.box-hover:hover .overlay {
+  height: 50%;
+}
 
 .text {
   color: white;
@@ -45,8 +47,17 @@
     text-overflow: ellipsis;*/
 }
 
+
 .text--title{
 
+}
+
+.text > h1{
+  font-size: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 300px;
 }
 
 .text > h2{
