@@ -3,12 +3,10 @@
 {% load bootstrap3 %}
 <style type="text/css">
 body{
-  padding-bottom: 200px;
-  font-family: 'Merriweather Sans', sans-serif;
-  font-weight: 800 !important;
+
+font-family: 'Merriweather Sans', sans-serif;
+font-weight: 800 !important;
 }
-
-
 .row-md-6{
 height: 50%;
 }
@@ -25,14 +23,15 @@ padding-top: 5px;
 .navbar--center{
 margin: 0 auto;
 }
-
 .title-3{
-  font-family: 'Merriweather Sans', sans-serif;
-  font-weight: 800 !important;
-  margin-top: 16px;
-  margin-bottom: 16px;
+font-family: 'Merriweather Sans', sans-serif;
+font-weight: 800 !important;
+margin-top: 16px;
+margin-bottom: 16px;
 }
-
+.nav-link--black{
+color: #000;
+}
 </style>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -44,7 +43,7 @@ margin: 0 auto;
     <title>Portal H8</title>
     <!-- Bootstrap core CSS -->
     <link href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="{% static "css/portfolio-item.css" %}" rel="stylesheet">
     <link href="{% static "css/hover-box.css" %}" rel="stylesheet">
@@ -69,26 +68,31 @@ margin: 0 auto;
         <div class="collapse navbar-collapse navbar--center" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home
+              <a class="nav-link nav-link--black" href="#">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Iniciativas</a>
+              <div class="dropdown show">
+                <a class="nav-link nav-link--black dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Iniciativas
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <a class="dropdown-item" href="#">RedeCasd</a>
+                  <a class="dropdown-item" href="#">CASD</a>
+                  <a class="dropdown-item" href="#">CEE</a>
+                  <a class="dropdown-item" href="#">AAAITA</a>
+                  <a class="dropdown-item" href="#">Enactus</a>
+                  <a class="dropdown-item" href="#">DepCult</a>
+                  <a class="dropdown-item" href="#">Maromba</a>
+                </div>
+              </div>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li>
+            
           </ul>
         </div>
       </div>
     </nav>
-
-
-
     <!-- Page Content -->
     <div class="container">
       <!-- Portfolio Item Heading -->
@@ -98,34 +102,31 @@ margin: 0 auto;
         <div class="col-md-6 col-ms-12">
           <div class="box-hover view zoom">
             <img class="image-expand" src="{{main_news.pic_url}}" %}">
-              <div class="text">
-                <h1>{{main_news.title}}</h1>
-              </div>
+            <div class="text">
+              <h1>{{main_news.title}}</h1>
+            </div>
           </div>
         </div>
-
         <div class="col-md-3">
           {% for news in news_list_1 %}
             <div class="row-md-6 image-news-cover--padding-bottom">
               <div class="box-hover total-height">
                 <img class="image-expand" src="{{news.pic_url}}">
-                  <div class="text"> <h2>{{ news.title }}</h2> </div>
+                <div class="text"> <h2>{{ news.title }}</h2> </div>
               </div>
             </div>
           {% endfor %}
         </div>
-
         <div class="col-md-3">
           {% for news in news_list_2 %}
             <div class="row-md-6 image-news-cover--padding-bottom">
               <div class="box-hover total-height">
                 <img class="image-expand" src="{{news.pic_url}}">
-                  <div class="text"> <h2>{{ news.title }}</h2> </div>
+                <div class="text"> <h2>{{ news.title }}</h2> </div>
               </div>
             </div>
           {% endfor %}
         </div>
-
       </div>
     </div>
     <!-- /.row -->
@@ -226,6 +227,10 @@ margin: 0 auto;
         </div>
       </div>
     </div>
+    <hr>
+    <footer style="width: 100%; background-color: #c9c9c9; height: 300px; text-align: center; padding-top: 150px;">
+      <p>Algum dia haverá um footer aqui</p>
+    </footer>
     <!-- /.row -->
     <!-- Bootstrap core JavaScript -->
     <script src="{% static "vendor/jquery/jquery.min.js" %}"></script>
