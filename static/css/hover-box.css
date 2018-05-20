@@ -1,0 +1,72 @@
+.box-hover {
+  position: relative;
+  height: 500px;
+  background-color: #000;
+}
+
+.box-hover > img{
+  opacity: .7;
+}
+
+.total-height{
+  height: 100%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  /*opacity: 0.8;*/
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: none;
+  overflow: hidden;
+  width: 100%;
+  height: 25%;
+  transition: .5s ease;
+}
+
+.box-hover:hover .overlay {
+  height: 50%;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  bottom: 12%;
+  left: 5%;
+  /*transform: translate(-50%, -50%);*/
+  /*-ms-transform: translate(-50%, -50%);*/
+  text-shadow: 0 1px 3px rgba(0,0,0,.8);
+/*  white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;*/
+}
+
+
+.text--title{
+
+}
+
+.text > h1{
+  font-size: 40px;
+  /*white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 300px;*/
+  text-shadow: 0 1px 3px rgba(0,0,0,.8);
+}
+
+.text > h2{
+  font-size: 30px;
+}
+
+.text > p{
+  display: none;
+}

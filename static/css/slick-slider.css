@@ -1,0 +1,31 @@
+
+    .slider-wrapper{
+      visibility: hidden;
+    }
+    .slider {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .slick-slide {
+      margin: 0px 20px;
+    }
+    .slick-slide img {
+      width: 100%;
+    }
+    .slick-prev:before,
+    .slick-next:before {
+      color: black;
+    }
+    .slick-slide {
+      transition: all ease-in-out .3s;
+      opacity: 1;
+    }
+    .slick-initialized{
+      visibility: visible;
+    }
+    .slick-active {
+      opacity: 1;
+    }
+    .slick-current {
+      opacity: 1;
+    }
