@@ -3,11 +3,11 @@
       $('.center').slick({
         dots: false,
         infinite: true,
-        speed: 300,
+        speed: 400,
         slidesToShow: 4,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 2000,
+        autoplaySpeed: 3000,
         responsive: [
           {
             breakpoint: 1024,

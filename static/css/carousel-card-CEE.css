@@ -1,5 +1,23 @@
 
 .card-CEE{
-	height: 300px;
-	border: 1px solid #000;
+	height: 350px;
+	margin-bottom: 12px;
+	box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card-CEE > img{
+	max-height: 50%;
+}
+
+.card-CEE-text{
+	padding: 5px;
+	margin: 0;
+}
+
+.card-CEE-text > li{
+	list-style-type: none;
+}
+
+.card-CEE-text > p{
+	margin: 0;
 }
