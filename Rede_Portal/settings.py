@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'bootstrap3',
     'bootstrap4',
     'home.apps.HomeConfig',
+    'redecasd.apps.RedecasdConfig',
     'issues_report.apps.IssuesReportConfig',
     'django.contrib.admin',
     'django.contrib.auth',
