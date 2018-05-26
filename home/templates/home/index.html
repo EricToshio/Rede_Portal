@@ -12,28 +12,35 @@
     <!-- Portfolio Item Row -->
     <div class="row">
       <div class="col-md-6 col-ms-12">
-        <div class="box-hover view zoom">
+        <div class="box-hover hover-image">
+          <figure>
           <img class="image-expand" src="{{main_news.pic_url}}" %}">
+        </figure>
           <div class="text">
             <h1>{{main_news.title}}</h1>
           </div>
         </div>
+        
       </div>
-      <div class="col-md-3">
+      <div class="col-md-3 col-xs-12">
         {% for news in news_list_1 %}
           <div class="row-md-6 image-news-cover--padding-bottom">
-            <div class="box-hover total-height">
+            <div class="box-hover total-height hover-image small-box">
+              <figure>
               <img class="image-expand" src="{{news.pic_url}}">
+              </figure>
               <div class="text"> <h2>{{ news.title }}</h2> </div>
             </div>
           </div>
         {% endfor %}
       </div>
-      <div class="col-md-3">
+      <div class="col-md-3 col-xs-12">
         {% for news in news_list_2 %}
           <div class="row-md-6 image-news-cover--padding-bottom">
-            <div class="box-hover total-height">
+            <div class="box-hover total-height hover-image small-box">
+              <figure>
               <img class="image-expand" src="{{news.pic_url}}">
+              </figure>
               <div class="text"> <h2>{{ news.title }}</h2> </div>
             </div>
           </div>
