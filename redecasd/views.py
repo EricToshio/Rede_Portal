@@ -9,3 +9,7 @@ from django.urls import reverse
 def index(request):
     context = {}
     return render(request, 'redecasd/index.html', context)
+
+def member(request):
+    context = {}
+    return render(request, 'redecasd/dashboard/index.html', context)
