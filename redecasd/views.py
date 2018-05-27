@@ -7,15 +7,10 @@ from django.urls import reverse
 
 from issues_report.models import Problem
 
-def member(request):
-    context = {'problem_list': Problem.objects.filter(iniciativa="RedeCasd").order_by('-pub_date')[0:3]}
-    return render(request, 'redecasd/dashboard/index.html', context)
-
-
 def index(request):
     context = {}
     return render(request, 'redecasd/index.html', context)
 
-# def member(request):
-#     context = {}
-#     return render(request, 'redecasd/dashboard/index.html', context)
+def member(request):
+    context = {'problem_list': Problem.objects.filter(iniciativa="RedeCasd").order_by('-pub_date')}
+    return render(request, 'redecasd/dashboard/index.html', context)
