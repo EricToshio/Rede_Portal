@@ -5,7 +5,7 @@ from django.urls import reverse
 from django.utils import timezone
 
 from .models import Problem
-from .forms import IssueForm
+from .forms import IssueForm, TicketForm
 
 
 def index(request):
@@ -31,11 +31,21 @@ def index(request):
 
     # if a GET (or any other method) we'll create a blank form
     
-    form = IssueForm()
-    context = {'problems_list': Problem.objects.order_by('-pub_date'),'form_new': form}
+    issue_form = IssueForm()
+    ticket_form = TicketForm()
+    context = {'problems_list': Problem.objects.order_by('-pub_date'),'issue_form': issue_form,'ticket_form': ticket_form}
     return render(request, 'issues_report/index.html', context)
 
-def ticket(request,ticket_id):
+def ticket(request,ticket_id=None):
+
+    if request.method == 'POST':
+        form = TicketForm(request.POST)
+        if form.is_valid():
+            ticket=form.cleaned_data['ticket']
+            Problem_get = get_object_or_404(Problem, ticket=ticket)
+            text = "Situação do Problema: " 
+            return render(request, 'issues_report/details.html', {'problem': Problem_get, 'text': text})
+
     Problem_get = get_object_or_404(Problem, ticket=ticket_id)
     text = "Situação do Problema: "    
     return render(request, 'issues_report/details.html', {'problem': Problem_get, 'text': text})

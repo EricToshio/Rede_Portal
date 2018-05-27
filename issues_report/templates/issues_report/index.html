@@ -77,7 +77,7 @@
                     <div class="issues_report-form">
                         <form action="" method="post">
                             {% csrf_token %}
-                            {{ form_new }}
+                            {{ issue_form }}
                             <input type="submit" value="Enviar" />
                         </form>
                     </div>
@@ -85,10 +85,10 @@
                 <div class="col-xl-6 col-md-12 border-box">
                     <h1 class="issues_report-form__title">Consulta</h1>
                     <div class="issues_report-form">
-                        <form action="" method="post">
+                        <form action="./ticket" method="post">
                             {% csrf_token %}
-                            {{ form_new }}
-                            <input type="submit" value="Enviar" />
+                            {{ ticket_form }}
+                            <input type="submit" value="Consultar" />
                         </form>
                     </div>
                 </div>
