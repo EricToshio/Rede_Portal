@@ -63,7 +63,8 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb no-background-color">
                         <li class="breadcrumb-item"><a href="../">PortalH8</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Reportar problemas</li>
+                        <li class="breadcrumb-item"><a href="../">Reporta problemas</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Ticket</li>
                     </ol>
                 </nav>
             </div>
@@ -73,30 +74,31 @@
         
         <div class="report-form-section">
             <div class="report-form-section__form">
-                <form action="" method="post">
-                    {% csrf_token %}
-                    {{ form }}
-                    <input type="submit" value="Enviar" />
-                </form>
+                <h4>{{text}} {{problem.ticket}}</h4>
             </div>
         </div>
-        
         <div class="public-problems">
-            <h1> Problemas já relatados </h1>
-            {% for problems in problems_list %}
             <div class="public-problems-wrapper">
+            	<h3>Status: {{problem.status}}</h3>
                 <div class="public-problems-description">
-                    <p>Nome: {{problems.name}}</p>
-                    <p>Problema: {{problems.description}}</p>
-                    <p>AP/vaga: {{problems.localization}}</p>
-                    <p>Status: {{problems.status}}</p>
-                    <p>Data/Hora: {{problems.pub_date}}</p>
+                	<h4>
+                        <p>Nome: {{problem.name}}</p>
+                        <p>Problema: {{problem.description}}</p>
+                        <p>AP/vaga: {{problem.localization}}</p>
+                        <p>Data/Hora: {{problem.pub_date}}</p>
+                    </h4>
                 </div>
                 <hr>
-                Reclamação para: {{problems.iniciativa}}
+                Reclamação para: {{problem.iniciativa}}
                 <hr>
             </div>
-            {% endfor %}
+        </div>
+        <div class="report-form-section">
+            <div class="report-form-section__form">
+                <a href="../">
+                    <button type="button" color="green" class="btn btn-light">Voltar</button>
+                </a>
+            </div>
         </div>
     </body>
 </html>

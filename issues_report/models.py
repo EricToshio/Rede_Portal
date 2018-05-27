@@ -10,3 +10,5 @@ class Problem(models.Model):
     pub_date = models.DateTimeField('date published')
     ticket = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
     status = models.CharField(default="enviado",max_length=20)
+    def __str__(self):
+        return str(self.ticket)
