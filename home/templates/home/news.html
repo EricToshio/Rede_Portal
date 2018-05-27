@@ -6,11 +6,20 @@
 
 {% block content %}
   <!-- Page Content -->
-  <div class="container">
-    {{news.title}}
-    <img src="{{news.pic_url}}" %}">
-    <p> {{news.description}} </p>
-  </div>
+    <div class="container">
+      <div class="col-xl-12">
+          <h1>
+            {{news.title}}
+          </h1>
+          <h3>
+            {{news.sub_title}}
+          </h3>
+          <img src="{{news.pic_url}}" %}">
+          <p> {{news.text}} </p>
+          <p> {{news.iniciativa_name}} </p>
+          <p> {{news.pub_date}} </p>
+      </div>
+    </div>
 
 
 {% endblock %}
