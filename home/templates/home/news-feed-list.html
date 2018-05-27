@@ -15,6 +15,15 @@
             </nav>
         </div>
     </div>
+    <div class="container">
+        <div class="col-xl-12">
+            <div class="row">
+                <div class="news-feed-filter">
+                    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Filtre por iniciativas...">
+                </div>
+            </div>
+        </div>
+    </div>
 
 {% include page_template %}
 
@@ -25,6 +34,27 @@
         $.endlessPaginate({
         	paginateOnScroll: true,
         });
+    </script>
+
+    <script>
+    function myFunction() {
+        // Declare variables
+        var input, filter, ul, li, a, i;
+        input = document.getElementById('myInput');
+        filter = input.value.toUpperCase();
+        ul = document.getElementsByClassName("js-news-item-filter");
+        li = document.getElementsByClassName("js-iniciativa-name");
+
+        // Loop through all list items, and hide those who don't match the search query
+        for (i = 0; i < li.length; i++) {
+            a = li[i];
+            if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                ul[i].style.display = "";
+            } else {
+                ul[i].style.display = "none";
+            }
+        }
+    }
     </script>
 {% endblock %}
 {% endblock %}

@@ -5,7 +5,7 @@
 
 {% paginate news_list %}
 {% for news in news_list %}
-    <div class="container">
+    <div class="js-news-item-filter container">
         <div class="row">
             <div class="col-xl box-padding">
                 <div class="news-item-box-wrapper background-blue">
@@ -15,7 +15,7 @@
                         <img src="{{ news.pic_url }}" height="128" width="128"/>
                         <p>{{ news.text }}</p>
                         <p>{{ news.pub_date }}</p>
-                        <div class="news-item__tag">
+                        <div class="js-iniciativa-name news-item__tag">
                             {{ news.iniciativa_name }}
                         </div>
                     </div>
