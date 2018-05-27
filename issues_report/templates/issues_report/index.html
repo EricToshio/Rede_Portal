@@ -20,6 +20,7 @@
             .no-background-color{
     background-color: transparent;
 }
+
         </style>
     </head>
     <body>
@@ -69,33 +70,68 @@
             </div>
         </div>
 
-
-        
-        <div class="report-form-section">
-            <div class="report-form-section__form">
-                <form action="" method="post">
-                    {% csrf_token %}
-                    {{ form }}
-                    <input type="submit" value="Submit" />
-                </form>
-            </div>
-        </div>
-        <div class="public-problems">
-            <h1> Problemas já relatados </h1>
-            {% for problems in problems_list %}
-            <div class="public-problems-wrapper">
-                <div class="public-problems-description">
-                    <p>Nome: {{problems.name}}</p>
-                    <p>Problema: {{problems.description}}</p>
-                    <p>AP/vaga: {{problems.localization}}</p>
-                    <p>Status: {{problems.status}}</p>
-                    <p>Data/Hora: {{problems.pub_date}}</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-md-12">
+                    <h1 class="issues_report-form__title">Relate um novo problema</h1>
+                    <div class="issues_report-form">
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            {{ form_new }}
+                            <input type="submit" value="Enviar" />
+                        </form>
+                    </div>
                 </div>
-                <hr>
-                Reclamação para: {{problems.iniciativa}}
-                <hr>
+                <div class="col-xl-6 col-md-12 border-box">
+                    <h1 class="issues_report-form__title">Consulta</h1>
+                    <div class="issues_report-form">
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            {{ form_new }}
+                            <input type="submit" value="Enviar" />
+                        </form>
+                    </div>
+                </div>
             </div>
-            {% endfor %}
         </div>
+
+        <div class="container">
+            <hr>
+            <h2 class="public-problem__title"> Problemas já relatados </h2>
+            <div class="col-xl-12 col-lg-12">
+                {% for problem in problems_list %}
+                    <div class="public-problem-card">
+                        
+                        <div class="row">
+                            <div class="col-xl-4 col-lg-12">
+                                <h5> Nome </h5>
+                                <p> {{problem.name}} </p>
+                            </div>
+                            <div class="col-xl-4 col-lg-12">
+                                <h5> Apartamento </h5>
+                                <p> {{problem.localization}} </p>
+                            </div>
+                            <div class="col-xl-4 col-lg-12">
+                                <h5> Data</h5>
+                                <p> {{problem.pub_date}} </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-12 col-lg-12">
+                                <h5> Reclamação para:</h5>
+                                <p> {{problem.iniciativa}} </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-12 col-lg-12">
+                                <h5> Descrição </h5>
+                                <p> {{problem.description}} </p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+       
     </body>
 </html>

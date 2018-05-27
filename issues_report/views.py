@@ -36,5 +36,5 @@ def index(request):
     
     form = IssueForm()
 
-    context = {'problems_list': Problem.objects.order_by('-pub_date'),'form': form}
+    context = {'problems_list': Problem.objects.order_by('-pub_date'),'form_new': form}
     return render(request, 'issues_report/index.html', context)

@@ -111,7 +111,7 @@ input[type=submit]:hover {
 
 .report-form-section{
     border-radius: 5px;
-    background-color: #f2f2f2;
+    /*background-color: #f2f2f2;*/
     padding: 20px;
     border-bottom: 1px solid #000;
 }
@@ -137,4 +137,46 @@ input[type=submit]:hover {
 .public-problems-description{
     color: #444;
     font-size: rem(32);
+}
+
+.issues_report-form__title{
+    font-size: 32px;
+}
+
+.issues_report-form label{
+    margin: 0;
+    padding: 0;
+}
+
+.border-box{
+    border-left: 1px solid #b5b5b5;
+}
+
+.public-problem-card{
+    border: 1px solid rgba(0,0,0,.125);
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 8px;
+}
+
+.public-problem-card h5{
+    color: #868e96;
+    font-size: 14px;
+}
+
+.public-problem-card p{
+    font-size: 18px;
+    color: #000;
+    margin-bottom: 8px;
+}
+
+.public-problem-card hr{
+    border: 1px solid rgba(0,0,0,.125);
+    padding: 0;
+    margin: 3px 3px;
+    margin-bottom: 6px;
+}
+
+.public-problem__title{
+    margin: 18px 0;
 }
