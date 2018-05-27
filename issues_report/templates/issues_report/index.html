@@ -1,17 +1,76 @@
 {% load static %}
 <!DOCTYPE html>
-
 <html>
-    <title>Rede_Portal</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-    <link rel="stylesheet" type="text/css" href="{% static 'issues_report/style.css' %}" />
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Portal H8 - Reportar Problemas</title>
+        <!-- Bootstrap core CSS -->
+        <link href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="{% static "css/portfolio-item.css" %}" rel="stylesheet">
+        <link href="{% static "css/hover-box.css" %}" rel="stylesheet">
+        <link href="{% static "css/home-carousel.css" %}" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static "slick/slick.css" %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'issues_report/style.css' %}" />
+        <style type="text/css">
+            .no-background-color{
+    background-color: transparent;
+}
+        </style>
+    </head>
     <body>
-        <div class="header">
-            <img class="header__logo" src="{% static 'issues_report/images/logo_portalH8.png' %}">
-
+        <nav class="navbar navbar-expand-lg navbar-white bg-white fixed-top" style='box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);'>
+            <div class="container">
+                <a class="pull-left href="#">
+                    <img style="height: 45px;" src="{% static "home/images/logo_portalH8.png" %}">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse navbar--center" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link nav-link--black" href="../">Home
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <div class="dropdown show">
+                                <a class="nav-link nav-link--black dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Iniciativas
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" href="/redecasd">RedeCasd</a>
+                                    <a class="dropdown-item" href="#">CASD</a>
+                                    <a class="dropdown-item" href="#">CEE</a>
+                                    <a class="dropdown-item" href="#">AAAITA</a>
+                                    <a class="dropdown-item" href="#">Enactus</a>
+                                    <a class="dropdown-item" href="#">DepCult</a>
+                                    <a class="dropdown-item" href="#">Maromba</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb no-background-color">
+                        <li class="breadcrumb-item"><a href="../">PortalH8</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Reportar problemas</li>
+                    </ol>
+                </nav>
+            </div>
         </div>
+
+
+        
         <div class="report-form-section">
             <div class="report-form-section__form">
                 <form action="" method="post">
@@ -21,7 +80,6 @@
                 </form>
             </div>
         </div>
-
         <div class="public-problems">
             <h1> Problemas já relatados </h1>
             {% for problems in problems_list %}

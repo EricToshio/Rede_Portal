@@ -1,37 +1,245 @@
+{% extends 'home/base.html' %}
 
 {% load static %}
+{% load bootstrap4 %}
+{% load bootstrap3 %}
 
-<!DOCTYPE html>
-<html>
-    <title>Rede_Portal</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-    <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}" />
-    <body>
-        <div class="header">
-            <img class="header__logo" src="{% static 'home/images/logo_portalH8.png' %}">
-            <div class="issues-report-wrapper">
-                <form action="{% url 'issues_report:index' %}">
-                    <input type="submit" value="Reportar problema" />
-                </form>
-            </div>
+{% block content %}
+  <!-- Page Content -->
+  <div class="container">
+    <!-- Portfolio Item Heading -->
+    <h3 class="title-3">News</h3>
+    <!-- Portfolio Item Row -->
+    <div class="row">
+      <div class="col-md-6 col-ms-12">
+        <div class="box-hover hover-image">
+          <figure>
+          <img class="image-expand" src="{{main_news.pic_url}}" %}">
+        </figure>
+          <div class="text">
+            <h1>{{main_news.title}}</h1>
+          </div>
         </div>
-        <!-- <hr class="divider"> -->
-        <div class="news-wrapper">
-            <h1>Últimas novidades</h1>
-            {% for news in news_list %}
-            <div class="news-item">
-                <h2>{{ news.title }}</h2>
-                <h4>{{ news.sub_title }}</h4>
-                <img src="{{ news.pic_url }}" height="128" width="128"/>
-                <p>{{ news.text }}</p>
-                <p>{{ news.pub_date }}</p>
-                <div class="news-item__tag">
-                    {{ news.iniciativa_name }}
-                </div>
+        
+      </div>
+      <div class="col-md-3 col-xs-12">
+        {% for news in news_list_1 %}
+          <div class="row-md-6 image-news-cover--padding-bottom">
+            <div class="box-hover total-height hover-image small-box">
+              <figure>
+              <img class="image-expand" src="{{news.pic_url}}">
+              </figure>
+              <div class="text"> <h2>{{ news.title }}</h2> </div>
             </div>
-            {% endfor %}
+          </div>
+        {% endfor %}
+      </div>
+      <div class="col-md-3 col-xs-12">
+        {% for news in news_list_2 %}
+          <div class="row-md-6 image-news-cover--padding-bottom">
+            <div class="box-hover total-height hover-image small-box">
+              <figure>
+              <img class="image-expand" src="{{news.pic_url}}">
+              </figure>
+              <div class="text"> <h2>{{ news.title }}</h2> </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <!-- /.row -->
+  <!-- Related Projects Row -->
+  <hr>
+  <div class="container">
+    <div class="col-md-12">
+      <h3 class="title-3">Oportunidades CEE</h3>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="slider-wrapper">
+          <div class="center slider">
+            <div>
+              <div class="card-CEE">
+                <img src="{% static "home/images/lorem4.jpg" %}">
+                <ul class="card-CEE-text">
+                  <li>
+                      <h4>Área:</h4> 
+                      <h3>Financeiro</h3> 
+                      <hr>
+                  </li>
+                  <li>
+                      <h4>Data:</h4> 
+                      <h3>89/89/89</h3> 
+                      <hr>
+                  </li>
+                  <li>
+                      <h4>Local:</h4> 
+                      <h3>Cineclube</h3> 
+                      <hr>
+                  </li>
+                  <li>
+                      <h4>Descrição:</h4> 
+                      <p>Alguma coisa falando sobre mercado financeiro e que é imperdível. </p> 
+
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div>
+              <div class="card-CEE">
+                <img src="{% static "home/images/lorem3.jpg" %}">
+                <ul class="card-CEE-text">
+                  <li>
+                      <h4>Área:</h4> 
+                      <h3>Financeiro</h3> 
+                      <hr>
+                  </li>
+                  <li>
+                      <h4>Data:</h4> 
+                      <h3>89/89/89</h3> 
+                      <hr>
+                  </li>
+                  <li>
+                      <h4>Local:</h4> 
+                      <h3>Cineclube</h3> 
+                      <hr>
+                  </li>
+                  <li>
+                      <h4>Descrição:</h4> 
+                      <p>Alguma coisa falando sobre mercado financeiro e que é imperdível. </p> 
+
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div>
+              <div class="card-CEE">
+                <img src="{% static "home/images/lorem5.jpg" %}">
+                <ul class="card-CEE-text">
+                  <li>
+                      <h4>Área:</h4> 
+                      <h3>Computação</h3> 
+                      <hr>
+                  </li>
+                  <li>
+                      <h4>Data:</h4> 
+                      <h3>89/89/89</h3> 
+                      <hr>
+                  </li>
+                  <li>
+                      <h4>Local:</h4> 
+                      <h3>Cineclube</h3> 
+                      <hr>
+                  </li>
+                  <li>
+                      <h4>Descrição:</h4> 
+                      <p>hur dur hur dur</p> 
+
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div>
+              <div class="card-CEE">
+                <img src="{% static "home/images/lorem6.jpg" %}">
+                <ul class="card-CEE-text">
+                  <li>
+                      <h4>Área:</h4> 
+                      <h3>Engenharia Mecânica</h3> 
+                      <hr>
+                  </li>
+                  <li>
+                      <h4>Data:</h4> 
+                      <h3>89/89/89</h3> 
+                      <hr>
+                  </li>
+                  <li>
+                      <h4>Local:</h4> 
+                      <h3>Cineclube</h3> 
+                      <hr>
+                  </li>
+                  <li>
+                      <h4>Descrição:</h4> 
+                      <p>hur dur mec não é coçada </p> 
+
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div>
+              <div class="card-CEE">
+                <img src="{% static "home/images/lorem7.jpg" %}">
+                <ul class="card-CEE-text">
+                  <li>
+                      <h4>Área:</h4> 
+                      <h3>Consultoria</h3> 
+                      <hr>
+                  </li>
+                  <li>
+                      <h4>Data:</h4> 
+                      <h3>89/89/89</h3> 
+                      <hr>
+                  </li>
+                  <li>
+                      <h4>Local:</h4> 
+                      <h3>Cineclube</h3> 
+                      <hr>
+                  </li>
+                  <li>
+                      <h4>Descrição:</h4> 
+                      <p>venda sua alma para a accenture</p> 
+
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-    </body>
-</html> 
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="container">
+    <div class="col-lg-12">
+      <h3 class="title-3">Eventos</h3>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="slider-wrapper">
+          <div class="center slider">
+            <div>
+              <div class="card-events">
+                <img src="{% static "home/images/encontrinho.jpg" %}">
+              </div>
+            </div>
+            <div>
+              <div class="card-events">
+                <img src="{% static "home/images/encontrinho.jpg" %}">
+              </div>
+            </div>
+            <div>
+              <div class="card-events">
+                <img src="{% static "home/images/encontrinho.jpg" %}">
+              </div>
+            </div>
+            <div>
+              <div class="card-events">
+                <img src="{% static "home/images/encontrinho.jpg" %}">
+              </div>
+            </div>
+            <div>
+              <div class="card-events">
+                <img src="{% static "home/images/encontrinho.jpg" %}">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <footer style="width: 100%; background-color: #c9c9c9; height: 300px; text-align: center; padding-top: 150px;">
+    <p>Algum dia haverá um footer aqui</p>
+  </footer>
+{% endblock %}

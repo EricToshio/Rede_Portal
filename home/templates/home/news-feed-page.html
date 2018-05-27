@@ -1,0 +1,26 @@
+{% load el_pagination_tags %}
+{% load static %}
+{% load bootstrap4 %}
+{% load bootstrap3 %}
+
+{% paginate news_list %}
+{% for news in news_list %}
+    <div class="container">
+        <div class="row">
+            <div class="col-xl box-padding">
+                <div class="news-item-box-wrapper background-blue">
+                    <div class="news-item">
+                        <h2>{{ news.title }}</h2>
+                        <h4>{{ news.sub_title }}</h4>
+                        <img src="{{ news.pic_url }}" height="128" width="128"/>
+                        <p>{{ news.text }}</p>
+                        <p>{{ news.pub_date }}</p>
+                        <div class="news-item__tag">
+                            {{ news.iniciativa_name }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}

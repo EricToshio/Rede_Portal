@@ -3,7 +3,7 @@ from django.core.validators import MaxLengthValidator
 import os
 
 def get_image_path(instance, filename):
-        return os.path.join('static', 'home', 'images', 'news',str(instance.id), filename)
+        return os.path.join('home','static', 'home', 'images', 'news',str(instance.id), filename)
 
 # Create your models here.
 class News(models.Model):
