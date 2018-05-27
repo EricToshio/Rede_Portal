@@ -138,3 +138,30 @@ input[type=submit]:hover {
     color: #444;
     font-size: rem(32);
 }
+
+
+
+.problem-card{
+    border: 1px solid rgba(0,0,0,.125);
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 8px;
+}
+
+.problem-card h5{
+    color: #868e96;
+    font-size: 14px;
+}
+
+.problem-card p{
+    font-size: 18px;
+    color: #000;
+    margin-bottom: 8px;
+}
+
+.problem-card hr{
+    border: 1px solid rgba(0,0,0,.125);
+    padding: 0;
+    margin: 3px 3px;
+    margin-bottom: 6px;
+}
