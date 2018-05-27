@@ -24,3 +24,8 @@ def news_feed(request,
     if request.is_ajax():
         template = page_template
     return render(request, template, context)
+
+def news(request):
+    id_parameter = request.GET['toshio_pistola']
+    context = {'news': News.objects.filter(id=id_parameter)[0]}
+    return render(request, 'home/news.html', context)

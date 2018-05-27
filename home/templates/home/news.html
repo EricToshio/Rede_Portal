@@ -1,0 +1,16 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+{% load bootstrap4 %}
+{% load bootstrap3 %}
+
+{% block content %}
+  <!-- Page Content -->
+  <div class="container">
+    {{news.title}}
+    <img src="{{news.pic_url}}" %}">
+    <p> {{news.description}} </p>
+  </div>
+
+
+{% endblock %}
