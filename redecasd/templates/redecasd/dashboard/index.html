@@ -1,6 +1,4 @@
-
 {% load static %}
-
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -12,10 +10,8 @@
     <title>Painel RedeCasd</title>
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link rel="apple-touch-icon" href="apple-icon.png">
     <link rel="shortcut icon" href="favicon.ico">
-
     <link rel="stylesheet" href="{% static "redecasd/assets/css/normalize.css" %}">
     <link rel="stylesheet" href="{% static "redecasd/assets/css/bootstrap.min.css" %}">
     <link rel="stylesheet" href="{% static "redecasd/assets/css/font-awesome.min.css" %}">
@@ -26,30 +22,21 @@
     <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
     <link rel="stylesheet" href="{% static "redecasd/assets/scss/style.css" %}">
     <link href="{% static "redecasd/assets/css/lib/vector-map/jqvmap.min.css" %}" rel="stylesheet">
-
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-
     <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js">
-
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
-
 </head>
 <body>
-
-
-        <!-- Left Panel -->
-
+    <!-- Left Panel -->
     <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">
-
             <div class="navbar-header">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fa fa-bars"></i>
+                <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand" href="./"><img src="images/logo.png" alt="Logo"></a>
                 <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
             </div>
-
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
@@ -66,9 +53,7 @@
                     </li>
                     
                     
-
                     <h3 class="menu-title">Icons</h3><!-- /.menu-title -->
-
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Icons</a>
                         <ul class="sub-menu children dropdown-menu">
@@ -87,32 +72,20 @@
                         </ul>
                     </li>
                 </ul>
-            </div><!-- /.navbar-collapse -->
+            </div>
         </nav>
-    </aside><!-- /#left-panel -->
-
-    <!-- Left Panel -->
-
-    <!-- Right Panel -->
-
+    </aside>
+    
     <div id="right-panel" class="right-panel">
-
-        <!-- Header-->
+        
         <header id="header" class="header">
-
             <div class="header-menu">
-
                 <div class="col-sm-7">
                     <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
-                    
                 </div>
-
-                
             </div>
-
-        </header><!-- /header -->
-        <!-- Header-->
-
+        </header>
+        
         <div class="breadcrumbs">
             <div class="col-sm-4">
                 <div class="page-header float-left">
@@ -131,94 +104,26 @@
                 </div>
             </div>
         </div>
-
-        <div class="content mt-3">
-
-             {% for news in news_list_1 %}
-              <div class="row-md-6 image-news-cover--padding-bottom">
-                <div class="box-hover total-height hover-image small-box">
-                  <figure>
-                  <img class="image-expand" src="{{news.pic_url}}">
-                  </figure>
-                  <div class="text"> <h2>{{ news.title }}</h2> </div>
-                </div>
-              </div>
-            {% endfor %}
-
-            {% for problem in problem_list %}
-            <div class="col-xl-12 col-lg-12">
-                <div class="problem-card">
-                    <div class="row">
-                        <div class="col-xl-3">
-                            <h5>Status</h5>
-                            <p style="color: rgb(255,0,0);">Pendente</p>
-                        </div>
-                        <div class="col-xl-3">
-                            <h5>Responsável</h5>
-                            <p> Eric Toshio </p>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-xl-4 col-lg-12">
-                            <h5> Nome </h5>
-                            <p> {{problem.name}} </p>
-                        </div>
-                        <div class="col-xl-4 col-lg-12">
-                            <h5> Apartamento </h5>
-                            <p> {{problem.localization}} </p>
-                        </div>
-                        <div class="col-xl-4 col-lg-12">
-                            <h5> Data</h5>
-                            <p> {{problem.pub_date}} </p>
-                        </div>
-                    </div>  
-                    <div class="row">
-                        <div class="col-xl-12 col-lg-12">
-                            <h5> Descrição </h5>
-                            <p> {{problem.description}} </p>
-                        </div>
-                    </div> 
-                </div>
+        <div class="content mt-3" id="problem-report-section" >
+            {% include 'redecasd/includes/partial_report_problem_list.html' %}
+        </div>
+    </div>
+    
+    <div class="modal fade teste" id="problem-report-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
             </div>
-            {% endfor %}
-            
-        </div> <!-- .content -->
-    </div><!-- /#right-panel -->
+        </div>
+    </div>
 
-    <!-- Right Panel -->
 
     <script src="{% static "redecasd/assets/js/vendor/jquery-2.1.4.min.js" %}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
     <script src="{% static "redecasd/assets/js/plugins.js" %}"></script>
     <script src="{% static "redecasd/assets/js/main.js" %}"></script>
-
-
-    <script src="{% static "redecasd/assets/js/lib/chart-js/Chart.bundle.js" %}"></script>
-    <script src="{% static "redecasd/assets/js/dashboard.js" %}"></script>
-    <script src="{% static "redecasd/assets/js/widgets.js" %}"></script>
-    <script src="{% static "redecasd/assets/js/lib/vector-map/jquery.vmap.js" %}"></script>
-    <script src="{% static "redecasd/assets/js/lib/vector-map/jquery.vmap.min.js" %}"></script>
-    <script src="{% static "redecasd/assets/js/lib/vector-map/jquery.vmap.sampledata.js" %}"></script>
-    <script src="{% static "redecasd/assets/js/lib/vector-map/country/jquery.vmap.world.js" %}"></script>
-    <script>
-        ( function ( $ ) {
-            "use strict";
-
-            jQuery( '#vmap' ).vectorMap( {
-                map: 'world_en',
-                backgroundColor: null,
-                color: '#ffffff',
-                hoverOpacity: 0.7,
-                selectedColor: '#1de9b6',
-                enableZoom: true,
-                showTooltip: true,
-                values: sample_data,
-                scaleColors: [ '#1de9b6', '#03a9f5' ],
-                normalizeFunction: 'polynomial'
-            } );
-        } )( jQuery );
-    </script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- <script src="{% static "redecasd/assets/js/dashboard.js" %}"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="{% static "redecasd/js/problem-report-edit.js" %}"></script>
 </body>
 </html>
