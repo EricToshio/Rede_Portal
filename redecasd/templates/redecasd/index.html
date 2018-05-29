@@ -1,125 +1,66 @@
+{% extends 'base.html' %}
+
 {% load static %}
-
-<!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Portal H8 - RedeCasd</title>
-    <!-- Bootstrap core CSS -->
-    <link href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="{% static "css/portfolio-item.css" %}" rel="stylesheet">
-    <link href="{% static "css/hover-box.css" %}" rel="stylesheet">
-    <link href="{% static "css/home-carousel.css" %}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static "slick/slick.css" %}">
-
-
+{% block style %}
     <style type="text/css">
-
     body{
-        background-color: #f9f9f9;
+    background-color: #f9f9f9;
     }
-
-.border-solid{
+    .border-solid{
     border: 1px solid #000 !important;
-}
-
-.margin-box{
+    }
+    .margin-box{
     margin-top: 15px;
     margin-bottom: 15px;
-}
-
-.no-padding{
+    }
+    .no-padding{
     padding: 0;
-}
-
-.no-background-color{
+    }
+    .no-background-color{
     background-color: transparent;
-}
-
-.box-padding{
+    }
+    .box-padding{
     padding: 10px;
-}
-
-.redecasd-box-wrapper{
+    }
+    .redecasd-box-wrapper{
     padding: 10px;
     border: 1px solid #e1e1e1;
     border-radius: 3px;
     height: 100%;
     background-color: #fff;
-}
-.redecasd-box--help > h1{
+    }
+    .redecasd-box--help > h1{
     /*color: #4d5d96;*/
     color: #f8f9fa;
     font-size: 24px;
     font-weight: 800;
     text-align: center;
-}
-
-.redecasd-box--help > a{
+    }
+    .redecasd-box--help > a{
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     top: 50%;
-}
-
-.background-blue{
-    background-color: #63c2de;
-}
-
-.nav-link--black{
-    color: #000;
     }
+    .background-blue{
+    background-color: #63c2de;
+    }
+    
+    .row-height{
+        min-height: 250px;
+    }
+    </style>
+{% endblock %}
 
-</style>
 
-  </head>
-  <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-white bg-white fixed-top" style='box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);'>
-      <div class="container">
-        <a class="pull-left href="#">
-          <img style="height: 45px;" src="{% static "home/images/logo_portalH8.png" %}">
+{% block header_item %}
+    <li class="nav-item active">
+        <a class="nav-link nav-link--black" href="membros/">Login
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse navbar--center" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link nav-link--black" href="../">Home
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <div class="dropdown show">
-                <a class="nav-link nav-link--black dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Iniciativas
-                </a>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                  <a class="dropdown-item" href="#">RedeCasd</a>
-                  <a class="dropdown-item" href="#">CASD</a>
-                  <a class="dropdown-item" href="#">CEE</a>
-                  <a class="dropdown-item" href="#">AAAITA</a>
-                  <a class="dropdown-item" href="#">Enactus</a>
-                  <a class="dropdown-item" href="#">DepCult</a>
-                  <a class="dropdown-item" href="#">Maromba</a>
-                </div>
-              </div>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link nav-link--black" href="membros/">Login
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    </li>
+{% endblock %}
 
+{% block content %}
     <div class="container">
         <div class="row">
             <nav aria-label="breadcrumb">
@@ -130,12 +71,9 @@
             </nav>
         </div>
     </div>
-
-
-
     <div class="container">
-        <div class="row margin-box" style="height: 200px;">
-            <div class="col-xl-3 box-padding">
+        <div class="row margin-box row-height">
+            <div class="col-lg-3 col-sm-6 box-padding">
                 <div class="redecasd-box-wrapper background-blue">
                     <div class="redecasd-box--help">
                         <h1>Problemas com a RedeCasd?</h1>
@@ -145,7 +83,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 box-padding">
+            <div class="col-lg-3 col-sm-6 box-padding">
                 <div class="redecasd-box-wrapper background-blue">
                     <div class="redecasd-box--help">
                         <h1>Problemas com a RedeCasd?</h1>
@@ -155,7 +93,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 box-padding">
+            <div class="col-lg-3 col-sm-6 box-padding">
                 <div class="redecasd-box-wrapper background-blue">
                     <div class="redecasd-box--help">
                         <h1>Problemas com a RedeCasd?</h1>
@@ -165,7 +103,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 box-padding">
+            <div class="col-lg-3 col-sm-6 box-padding">
                 <div class="redecasd-box-wrapper background-blue">
                     <div class="redecasd-box--help">
                         <h1>Problemas com a RedeCasd?</h1>
@@ -177,10 +115,9 @@
             </div>
         </div>
     </div>
-
     <div class="container">
-        <div class="row margin-box" style="height: 200px;">
-            <div class="col-xl-3 box-padding">
+        <div class="row margin-box row-height">
+            <div class="col-lg-3 col-sm-6 box-padding">
                 <div class="redecasd-box-wrapper background-blue">
                     <div class="redecasd-box--help">
                         <h1>Material dos treinamentos</h1>
@@ -190,7 +127,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 box-padding">
+            <div class="col-lg-3 col-sm-6 box-padding">
                 <div class="redecasd-box-wrapper background-blue">
                     <div class="redecasd-box--help">
                         <h1>Status da rede</h1>
@@ -200,7 +137,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 box-padding">
+            <div class="col-lg-3 col-sm-6 box-padding">
                 <div class="redecasd-box-wrapper background-blue">
                     <div class="redecasd-box--help">
                         <h1>Número de usuários na rede</h1>
@@ -210,7 +147,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 box-padding">
+            <div class="col-lg-3 col-sm-6 box-padding">
                 <div class="redecasd-box-wrapper background-blue">
                     <div class="redecasd-box--help">
                         <h1>Inscrição para o PS 2018.2</h1>
@@ -222,6 +159,4 @@
             </div>
         </div>
     </div>
-
-  </body>
-</html>
+{% endblock %}

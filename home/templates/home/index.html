@@ -1,15 +1,18 @@
-{% extends 'home/base.html' %}
-
+{% extends 'base.html' %}
 {% load static %}
-{% load bootstrap4 %}
-{% load bootstrap3 %}
+
+{% block style %}
+  <link rel="stylesheet" type="text/css" href="{% static "home/css/style.css" %}" />
+  <link rel="stylesheet" type="text/css" href="{% static "slick/slick.css" %}">
+  <link rel="stylesheet" type="text/css" href="{% static "slick/slick-theme.css" %}">
+  <link rel="stylesheet" type="text/css" href="{% static "css/slick-slider.css" %}">
+  <link rel="stylesheet" type="text/css" href="{% static "css/carousel-card-CEE.css" %}">
+  <link rel="stylesheet" type="text/css" href="{% static "css/carousel-card-events.css" %}">
+{% endblock %}
 
 {% block content %}
-  <!-- Page Content -->
   <div class="container">
-    <!-- Portfolio Item Heading -->
     <h3 class="title-3">News</h3>
-    <!-- Portfolio Item Row -->
     <div class="row">
       <div class="col-md-6 col-ms-12">
         <div class="box-hover hover-image">
@@ -54,198 +57,10 @@
       </div>
     </div>
   </div>
-  <!-- /.row -->
-  <!-- Related Projects Row -->
   <hr>
-  <div class="container">
-    <div class="col-md-12">
-      <h3 class="title-3">Oportunidades CEE</h3>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="slider-wrapper">
-          <div class="center slider">
-            <div>
-              <div class="card-CEE">
-                <img src="{% static "home/images/lorem4.jpg" %}">
-                <ul class="card-CEE-text">
-                  <li>
-                      <h4>Área:</h4> 
-                      <h3>Financeiro</h3> 
-                      <hr>
-                  </li>
-                  <li>
-                      <h4>Data:</h4> 
-                      <h3>89/89/89</h3> 
-                      <hr>
-                  </li>
-                  <li>
-                      <h4>Local:</h4> 
-                      <h3>Cineclube</h3> 
-                      <hr>
-                  </li>
-                  <li>
-                      <h4>Descrição:</h4> 
-                      <p>Alguma coisa falando sobre mercado financeiro e que é imperdível. </p> 
-
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div>
-              <div class="card-CEE">
-                <img src="{% static "home/images/lorem3.jpg" %}">
-                <ul class="card-CEE-text">
-                  <li>
-                      <h4>Área:</h4> 
-                      <h3>Financeiro</h3> 
-                      <hr>
-                  </li>
-                  <li>
-                      <h4>Data:</h4> 
-                      <h3>89/89/89</h3> 
-                      <hr>
-                  </li>
-                  <li>
-                      <h4>Local:</h4> 
-                      <h3>Cineclube</h3> 
-                      <hr>
-                  </li>
-                  <li>
-                      <h4>Descrição:</h4> 
-                      <p>Alguma coisa falando sobre mercado financeiro e que é imperdível. </p> 
-
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div>
-              <div class="card-CEE">
-                <img src="{% static "home/images/lorem5.jpg" %}">
-                <ul class="card-CEE-text">
-                  <li>
-                      <h4>Área:</h4> 
-                      <h3>Computação</h3> 
-                      <hr>
-                  </li>
-                  <li>
-                      <h4>Data:</h4> 
-                      <h3>89/89/89</h3> 
-                      <hr>
-                  </li>
-                  <li>
-                      <h4>Local:</h4> 
-                      <h3>Cineclube</h3> 
-                      <hr>
-                  </li>
-                  <li>
-                      <h4>Descrição:</h4> 
-                      <p>hur dur hur dur</p> 
-
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div>
-              <div class="card-CEE">
-                <img src="{% static "home/images/lorem6.jpg" %}">
-                <ul class="card-CEE-text">
-                  <li>
-                      <h4>Área:</h4> 
-                      <h3>Engenharia Mecânica</h3> 
-                      <hr>
-                  </li>
-                  <li>
-                      <h4>Data:</h4> 
-                      <h3>89/89/89</h3> 
-                      <hr>
-                  </li>
-                  <li>
-                      <h4>Local:</h4> 
-                      <h3>Cineclube</h3> 
-                      <hr>
-                  </li>
-                  <li>
-                      <h4>Descrição:</h4> 
-                      <p>hur dur mec não é coçada </p> 
-
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div>
-              <div class="card-CEE">
-                <img src="{% static "home/images/lorem7.jpg" %}">
-                <ul class="card-CEE-text">
-                  <li>
-                      <h4>Área:</h4> 
-                      <h3>Consultoria</h3> 
-                      <hr>
-                  </li>
-                  <li>
-                      <h4>Data:</h4> 
-                      <h3>89/89/89</h3> 
-                      <hr>
-                  </li>
-                  <li>
-                      <h4>Local:</h4> 
-                      <h3>Cineclube</h3> 
-                      <hr>
-                  </li>
-                  <li>
-                      <h4>Descrição:</h4> 
-                      <p>venda sua alma para a accenture</p> 
-
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  {% include 'home/includes/partial_carousel_CEE.html' %}
   <hr>
-  <div class="container">
-    <div class="col-lg-12">
-      <h3 class="title-3">Eventos</h3>
-    </div>
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="slider-wrapper">
-          <div class="center slider">
-            <div>
-              <div class="card-events">
-                <img src="{% static "home/images/encontrinho.jpg" %}">
-              </div>
-            </div>
-            <div>
-              <div class="card-events">
-                <img src="{% static "home/images/encontrinho.jpg" %}">
-              </div>
-            </div>
-            <div>
-              <div class="card-events">
-                <img src="{% static "home/images/encontrinho.jpg" %}">
-              </div>
-            </div>
-            <div>
-              <div class="card-events">
-                <img src="{% static "home/images/encontrinho.jpg" %}">
-              </div>
-            </div>
-            <div>
-              <div class="card-events">
-                <img src="{% static "home/images/encontrinho.jpg" %}">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  {% include 'home/includes/partial_carousel_eventos.html' %}
   <hr>
-  <footer style="width: 100%; background-color: #c9c9c9; height: 300px; text-align: center; padding-top: 150px;">
-    <p>Algum dia haverá um footer aqui</p>
-  </footer>
+  
 {% endblock %}

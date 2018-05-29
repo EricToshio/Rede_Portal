@@ -14,7 +14,6 @@ h1 {
 body,
 html{
     height: 100%; 
-    background-color: #FFF;
     margin: 0;
 }
 .header__logo{
@@ -180,3 +179,7 @@ input[type=submit]:hover {
 .public-problem__title{
     margin: 18px 0;
 }
+
+.no-background-color{
+            background-color: transparent;
+        }

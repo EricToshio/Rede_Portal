@@ -1,8 +1,12 @@
-{% extends 'home/base.html' %}
+{% extends 'base.html' %}
 
 {% load static %}
 {% load bootstrap4 %}
 {% load bootstrap3 %}
+
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/style.css' %}" />
+{% endblock %}
 
 {% block content %}
     <div class="container">
@@ -29,7 +33,7 @@
 
 {% block js %}
     <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="{% static 'home/el-pagination.js' %}"></script>
+    <script src="{% static 'home/js/el-pagination.js' %}"></script>
 	<script>
         $.endlessPaginate({
         	paginateOnScroll: true,

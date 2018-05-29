@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-xl-3">
           <h5>Status</h5>
-          <p style="color: rgb(255,0,0);">Pendente</p>
+          <p class="js-problem-card__status">Em avaliação</p>
         </div>
         <div class="col-xl-3">
           <h5>Responsável</h5>
@@ -15,7 +15,7 @@
           class="btn btn-warning btn-sm js-update"
           data-url="{% url 'redecasd:problem_report_update' problem.id %}"
           data-toggle="modal">
-          <span class="glyphicon glyphicon-pencil"></span> Edit
+          <span class="glyphicon glyphicon-search"></span> Edit
           </button>
         </div>
       </div>

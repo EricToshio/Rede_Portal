@@ -5,10 +5,7 @@ import os
 def get_image_path(instance, filename):
         return os.path.join('home','static', 'home', 'images', 'news',str(instance.id), filename)
 
-# Create your models here.
 class News(models.Model):
-    
-
     title = models.TextField(validators=[MaxLengthValidator(30)], default = 'Title')
     sub_title = models.TextField(validators=[MaxLengthValidator(50)], default = 'Sub-titulo')
     iniciativa_name = models.CharField(max_length=100)
@@ -20,12 +17,3 @@ class News(models.Model):
     
     def pic_url(self):
         return self.pic.url[4:]
-
-
-# class Choice(models.Model):
-#     question = models.ForeignKey(Question, on_delete=models.CASCADE)
-#     choice_text = models.CharField(max_length=200)
-#     votes = models.IntegerField(default=0)
-
-#     def __str__(self):
-#         return self.choice_text
