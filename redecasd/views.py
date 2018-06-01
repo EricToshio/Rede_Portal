@@ -14,6 +14,7 @@ from .forms import ProblemForm, ReservationForm
 
 def index(request):
     context = {}
+    print(request.COOKIES)
     return render(request, 'redecasd/index.html', context)
 
 def schedule(request):

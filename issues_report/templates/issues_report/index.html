@@ -18,7 +18,7 @@
             </nav>
         </div>
     </div>
-    <div class="container">
+    <div class="container" style="margin-bottom: 50px;">
         <div class="row">
             <div class="col-xl-6 col-md-12">
                 <h1 class="issues_report-form__title">Relate um novo problema</h1>
@@ -38,6 +38,14 @@
                         {{ ticket_form }}
                         <input type="submit" value="Consultar" />
                     </form>
+                    <div>
+                        Seus tickets:
+                    </div>
+                    {% for ticket in ticket_cookies %}
+                        <div>
+                            <a href="./ticket/{{ticket}}">{{ticket}}</a>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

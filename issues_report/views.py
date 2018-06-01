@@ -24,16 +24,29 @@ def index(request):
             issue = Problem(name=form.cleaned_data['name'], localization=form.cleaned_data['localization'], iniciativa=form.cleaned_data['iniciativa'],description=form.cleaned_data['description'], pub_date=timezone.now())
             issue.save()
             text = "Seu problema foi enviado com Sucesso! Para acompanhar a situação dele basta guardar o ticket:"
-            return render(request, 'issues_report/details.html', {'problem': issue, 'text': text})
+            response = render(request, 'issues_report/details.html', {'problem': issue, 'text': text})
+            # response.delete_cookie('ticket')
+            try:
+                cookie_list = request.COOKIES['ticket']
+            except:
+                cookie_list = "[]"
+            cookie_list = eval(cookie_list)
+            cookie = str(issue.ticket)
+            cookie_list.append(cookie)
+            response.set_cookie('ticket',cookie_list)
+            return response
 
         #context = {'problems_list': Problem.objects.order_by('-pub_date'),'form': form}
         #return render(request, 'issues_report/index.html', context)
 
     # if a GET (or any other method) we'll create a blank form
-    
     issue_form = IssueForm()
     ticket_form = TicketForm()
-    context = {'problems_list': Problem.objects.order_by('-pub_date'),'issue_form': issue_form,'ticket_form': ticket_form}
+    try:
+        ticket_cookies = eval(request.COOKIES['ticket'])
+    except:
+        ticket_cookies = []
+    context = {'problems_list': Problem.objects.order_by('-pub_date'),'issue_form': issue_form,'ticket_form': ticket_form, 'ticket_cookies': ticket_cookies}
     return render(request, 'issues_report/index.html', context)
 
 def ticket(request,ticket_id=None):
