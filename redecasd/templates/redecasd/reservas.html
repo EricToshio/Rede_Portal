@@ -1,0 +1,208 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load bootstrap3 %}
+
+{% load static %}
+{% block style %}
+    <style type="text/css">
+    body{
+    background-color: #f9f9f9;
+    }
+    .border-solid{
+    border: 1px solid #000 !important;
+    }
+    .margin-box{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    }
+    .no-padding{
+    padding: 0;
+    }
+    .no-background-color{
+    background-color: transparent !important;
+    }
+    .box-padding{
+    padding: 10px;
+    }
+    .redecasd-box-wrapper{
+    padding: 10px;
+    border: 1px solid #e1e1e1;
+    border-radius: 3px;
+    height: 100%;
+    background-color: #fff;
+    }
+    .redecasd-box--help > h1{
+    /*color: #4d5d96;*/
+    color: #f8f9fa;
+    font-size: 24px;
+    font-weight: 800;
+    text-align: center;
+    }
+    .redecasd-box--help > a{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50%;
+    }
+    .background-blue{
+    background-color: #63c2de;
+    }
+    
+    .row-height{
+        min-height: 250px;
+    }
+    td .fc-day{
+        /*background-color: #99e79a;*/
+        background-color: #fff;
+    }
+    </style>
+
+<link rel="stylesheet" href="{% static "redecasd/assets/css/bootstrap.min.css" %}">
+
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.0/fullcalendar.css' />
+
+
+{% endblock %}
+
+
+{% block header_item %}
+    <li class="nav-item active">
+        <a class="nav-link nav-link--black" href="membros/">Login
+        </a>
+    </li>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb no-background-color">
+                    <li class="breadcrumb-item"><a href="../">PortalH8</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"><a href="../">RedeCasd</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Reservas da sala</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="container" style="margin-bottom: 50px;">
+        <div class="row">
+            <div class="col-xl-12">
+                    <div id='calendar'></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="problem-report-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+{% block script %}
+<script src='http://code.jquery.com/jquery-1.11.3.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.1/moment.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.0/fullcalendar.min.js'></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script>
+$(function() {
+
+// events: [
+//   // all day event
+//   {
+//     title  : 'Meeting',
+//     start  : '2015-11-12'
+//   },
+//   // long-term event 
+//   {
+//     title  : 'Conference',
+//     start  : '2015-11-13',
+//     end    : '2015-11-15'
+//   },
+//   // short term event 
+//   {
+//     title  : 'Dentist',
+//     start  : '2015-11-09T11:30:00',
+//     end  : '2015-11-09T012:30:00'
+//     allDay : false // will make the time show
+//   }
+// ]
+
+ 
+
+  /* Functions */
+  var day;
+  var loadForm = function (date) {
+    var url_t = "/redecasd/reservas/create/1".replace('1', date);
+    $.ajax({
+      url: url_t,
+      type: 'get',
+      dataType: 'json',
+      beforeSend: function () {
+        $("#problem-report-modal .modal-content").html("");
+        $('#problem-report-modal').modal("show");
+        $('#problem-report-modal').addClass("show");
+        $('#problem-report-modal').css("background-color","rgba(0,0,0,0.8)");
+      },
+      success: function (data) {
+        $("#problem-report-modal .modal-content").html(data.html_form);
+      }
+    });
+  };
+
+  var saveForm = function () {
+    var form = $(this);
+    $.ajax({
+      url: form.attr("action"),
+      data: form.serialize(),
+      type: form.attr("method"),
+      dataType: 'json',
+      success: function (data) {
+        if (data.form_is_valid) {
+          // $("#problem-report-section").html(data.html_problem_list);
+          $("#problem-report-modal").modal("hide");
+          $('#calendar').fullCalendar( "refetchEvents" );
+          day.css("background-color","red");
+        }
+        else {
+          $("#problem-report-modal .modal-content").html(data.html_form);
+        }
+      }
+    });
+    return false;
+  };
+
+  $("#problem-report-modal").on("submit", ".js-reservation-create-form", saveForm);
+
+  $('#calendar').fullCalendar({
+    themeSystem: 'jquery-ui',
+    monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+    monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+    dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabado'],
+    dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
+    // editable: true,
+    // eventStartEditable: true,
+    header: {
+      left: 'prev,next today',
+      center: 'title',
+      right: ''
+    },
+    eventLimit: true,
+    events: "/redecasd/reservas/events/",
+    locale: 'pt',
+    dayClick: function(date, jsEvent, view) {
+      day = $(this);
+      loadForm(date.format());
+  }
+  });
+
+});
+
+</script>
+
+{% endblock %}
