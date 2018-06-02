@@ -1,0 +1,29 @@
+{% for request in pedidos_de_reserva %}
+  <div class="col-xl-12 col-lg-12">
+    <div class="problem-card">
+      <div class="row">
+        <div class="col-xl-3">
+          <h5>Status</h5>
+          <p class="js-problem-card__status">{{request.status}}</p>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-xl-4 col-lg-12">
+          <h5> Nome </h5>
+          <p> {{request.name}} </p>
+        </div>
+        <div class="col-xl-4 col-lg-12">
+          <h5> Data </h5>
+          <p> {{request.reservation_date}} </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-12 col-lg-12">
+          <h5> Detalhes </h5>
+          <p> {{problem.details}} </p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endfor %}

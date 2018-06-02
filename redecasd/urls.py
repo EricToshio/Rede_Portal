@@ -5,6 +5,7 @@ app_name = 'redecasd'
 urlpatterns = [
     path('', views.index, name='index'),
     path('membros/', views.member, name='member'),
+    path('membros/reservas', views.membros_reserva, name='membros_reserva'),
     path('reservas/', views.schedule, name='schedule'),
     path('membros/update/<int:pk>', views.problem_report_update, name='problem_report_update'),
 

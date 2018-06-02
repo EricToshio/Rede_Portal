@@ -25,6 +25,10 @@ def member(request):
     context = {'problem_list': Problem.objects.filter(iniciativa="RedeCasd").order_by('-pub_date')}
     return render(request, 'redecasd/dashboard/index.html', context)
 
+def membros_reserva(request):
+    context = {'pedidos_de_reserva': ReservationRede.objects.filter(status="pendente")}
+    return render(request, 'redecasd/dashboard/reserva-sala.html', context)
+
 def problem_report_update(request, pk):
     problem = get_object_or_404(Problem, pk=pk)
     if request.method == 'POST':

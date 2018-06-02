@@ -41,11 +41,13 @@
                     <div>
                         Seus tickets:
                     </div>
-                    {% for ticket in ticket_cookies %}
-                        <div>
-                            <a href="./ticket/{{ticket}}">{{ticket}}</a>
-                        </div>
-                    {% endfor %}
+                    <div style="max-height: 200px; overflow: scroll;">
+                        {% for ticket in ticket_cookies %}
+                            <div>
+                                <a href="./ticket/{{ticket}}">{{ticket}}</a>
+                            </div>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         </div>

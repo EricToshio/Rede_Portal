@@ -1,7 +1,6 @@
 {% extends 'redecasd/dashboard/base.html' %}
 {% load static %}
 
-
 {% block breadcrumb %}
     <div class="breadcrumbs">
         <div class="col-sm-4">
@@ -15,7 +14,7 @@
             <div class="page-header float-right">
                 <div class="page-title">
                     <ol class="breadcrumb text-right">
-                        <li class="active">Dashboard</li>
+                        <li class="active">Solicitações de reserva</li>
                     </ol>
                 </div>
             </div>
@@ -23,25 +22,8 @@
     </div>
 {% endblock %}
 
-
 {% block content %}
-    <div class="content mt-3" id="problem-report-section" >
-        {% include 'redecasd/includes/partial_report_problem_list.html' %}
+    <div class="content mt-3">
+        {% include 'redecasd/includes/partial_reservations_request.html' %}
     </div>
-{% endblock %}
-
-
-{% block modal %}
-    <div class="modal fade teste" id="problem-report-modal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-            </div>
-        </div>
-    </div>
-{% endblock %}
-
-
-{% block script %}
-    <script src="{% static "redecasd/js/problem-report-edit.js" %}"></script>
-    <script src="{% static "redecasd/js/problem-report-conditional-format.js" %}"></script>
 {% endblock %}
