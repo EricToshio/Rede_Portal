@@ -26,8 +26,17 @@ def member(request):
     return render(request, 'redecasd/dashboard/index.html', context)
 
 def membros_reserva(request):
-    context = {'pedidos_de_reserva': ReservationRede.objects.filter(status="pendente")}
+    context = {'pedidos_de_reserva': ReservationRede.objects.all()}
     return render(request, 'redecasd/dashboard/reserva-sala.html', context)
+
+def membros_reserva_positive(request, pk):
+    reservation = ReservationRede.objects.get(pk=pk)
+
+    reservation.status = 'autorizado'
+    reservation.save()
+    context = {'pedidos_de_reserva': ReservationRede.objects.all()}
+    data ={'html_reservation_list': render_to_string('redecasd/includes/partial_reservations_request.html', context, request)}
+    return JsonResponse(data)
 
 def problem_report_update(request, pk):
     problem = get_object_or_404(Problem, pk=pk)
@@ -93,6 +102,6 @@ def get_events():
     events = []
     reservations = ReservationRede.objects.all()
     for item in reservations:
-        events.append({'title':item.name, 'start': str(item.reservation_date), 'allDay': True})
+        events.append({'title':item.name, 'start': str(item.reservation_date), 'allDay': True, 'status':item.status})
     return events
 

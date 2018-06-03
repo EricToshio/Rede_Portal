@@ -1,11 +1,22 @@
-{% load widget_tweaks %}
+
 
 <div>
-	reserva para {{date}}
+    reserva para {{date}}
 </div>
-
 {{form.reservation_date.as_hidden}}
-{{form.name}}
-{{form.details}}
-{{form.address}}
-{{form.status}}
+<div class="col-sm-12">
+    <h5>Seu nome</h5>
+    {{form.name}}
+</div>
+<div class="col-sm-12">
+    <h5>apartamento</h5>
+    {{form.address}}
+</div>
+<div class="col-sm-12">
+    <h5>Detalhes</h5>
+    {{form.details}}
+</div>
+{{form.status.as_hidden}}
+<div class="alert alert-warning" role="alert">
+    Sua reserva estará sujeita a aprovação. Enquanto isso, ela será marcada como pendente e aparecerá em amarelo no calendário.
+</div>

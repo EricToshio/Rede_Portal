@@ -55,7 +55,7 @@ $(function() {
           // $("#problem-report-section").html(data.html_problem_list);
           $("#problem-report-modal").modal("hide");
           $('#calendar').fullCalendar( "refetchEvents" );
-          day.css("background-color","red");
+          // day.css("background-color","red");
         }
         else {
           $("#problem-report-modal .modal-content").html(data.html_form);
@@ -86,7 +86,15 @@ $(function() {
     dayClick: function(date, jsEvent, view) {
       day = $(this);
       loadForm(date.format());
-  }
+    },
+    eventRender: function(event, element) {
+      if (event.status == 'pendente') {
+        element.addClass('color-yellow');
+      }
+      if (event.status == 'autorizado'){
+        element.addClass('color-green'); 
+      }
+    }
   });
 
 });

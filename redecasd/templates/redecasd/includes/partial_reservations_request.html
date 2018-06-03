@@ -6,6 +6,20 @@
           <h5>Status</h5>
           <p class="js-problem-card__status">{{request.status}}</p>
         </div>
+        <div class="col-xl-3" style="width: 150px">
+          <button type="button"
+          class="btn btn-success btn-sm js-reservation-positive"
+          data-number="{{request.id}}"
+          data-toggle="modal">
+          <span class="glyphicon glyphicon-search"></span> Autorizar
+          </button>
+          <button type="button"
+          class="btn btn-danger btn-sm js-reservation-negative"
+          data-number="{{request.id}}"
+          data-toggle="modal">
+          <span class="glyphicon glyphicon-search"></span> Negar
+          </button>
+        </div>
       </div>
       <hr>
       <div class="row">

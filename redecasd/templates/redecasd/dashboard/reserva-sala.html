@@ -23,7 +23,11 @@
 {% endblock %}
 
 {% block content %}
-    <div class="content mt-3">
+    <div class="content mt-3" id="reservation_request_list">
         {% include 'redecasd/includes/partial_reservations_request.html' %}
     </div>
+{% endblock %}
+
+{% block script %}
+    <script src="{% static "redecasd/js/reservations_manage.js" %}"></script>
 {% endblock %}
