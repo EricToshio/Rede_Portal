@@ -25,7 +25,22 @@ $(function() {
         return false;
     };
 
+    var negativeRequest = function() {
+        var button = $(this);
+        var url_t = "/redecasd/membros/reservas/negar/1".replace('1', button.attr("data-number"));
+        $.ajax({
+            url: url_t,
+            dataType: 'json',
+            success: function(data) {
+                $("#reservation_request_list").html(data.html_reservation_list);
+                updateColor();
+            }
+        });
+        return false;
+    };
+
     $("#reservation_request_list").on("click", ".js-reservation-positive", positiveRequest);
+    $("#reservation_request_list").on("click", ".js-reservation-negative", negativeRequest);
 
     updateColor();
 });

@@ -29,10 +29,12 @@ def membros_reserva(request):
     context = {'pedidos_de_reserva': ReservationRede.objects.all()}
     return render(request, 'redecasd/dashboard/reserva-sala.html', context)
 
-def membros_reserva_positive(request, pk):
+def membros_reserva_positive(request, modo, pk):
     reservation = ReservationRede.objects.get(pk=pk)
-
-    reservation.status = 'autorizado'
+    if modo=='autorizar':
+        reservation.status = 'autorizado'
+    else:
+        reservation.status = 'pendente'
     reservation.save()
     context = {'pedidos_de_reserva': ReservationRede.objects.all()}
     data ={'html_reservation_list': render_to_string('redecasd/includes/partial_reservations_request.html', context, request)}
