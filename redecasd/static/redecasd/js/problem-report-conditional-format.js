@@ -1,9 +1,11 @@
-var highlights = {
-    "Pendente": "status-color--red",
-    "Em avaliação": "status-color--blue",
-    "Resolvido": "status-color--green",
+var updateColor = function() {
+    var highlights = {
+        "enviado": "red",
+        "avaliacao": "blue",
+        "resolvido": "green",
     }
 
     $(".js-problem-card__status").each(function() {
-        $(this).addClass(highlights[$(this).html()]);
+        $(this).css('color', highlights[$(this).html()]);
     });
+};

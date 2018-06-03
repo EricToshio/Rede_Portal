@@ -1,5 +1,5 @@
 
-    $(function (){
+$(function (){
 
   /* Functions */
 
@@ -32,6 +32,7 @@
         if (data.form_is_valid) {
           $("#problem-report-section").html(data.html_problem_list);
           $("#problem-report-modal").modal("hide");
+          updateColor();
         }
         else {
           $("#problem-report-modal .modal-content").html(data.html_form);
@@ -44,5 +45,7 @@
   // Update problem report record
   $("#problem-report-section").on("click", ".js-update", loadForm);
   $("#problem-report-modal").on("submit", ".js-update-form", saveForm);
+
+  updateColor();
 
 });

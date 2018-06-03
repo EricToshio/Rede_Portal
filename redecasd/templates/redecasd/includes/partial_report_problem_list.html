@@ -1,10 +1,10 @@
 {% for problem in problem_list %}
-  <div class="col-xl-12 col-lg-12">
+  <div class="col-xl-12 col-lg-12  problem_list {{problem.status}}">
     <div class="problem-card">
       <div class="row">
         <div class="col-xl-3">
           <h5>Status</h5>
-          <p class="js-problem-card__status">Em avaliação</p>
+          <p class="js-problem-card__status">{{problem.status}}</p>
         </div>
         <div class="col-xl-3">
           <h5>Responsável</h5>
@@ -17,6 +17,13 @@
           data-toggle="modal">
           <span class="glyphicon glyphicon-search"></span> Edit
           </button>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-xl-12">
+          <h5>Ticket</h5>
+          <p class="js-problem-card__status"><a href="../../reportar_problemas/ticket/{{problem.ticket}}">{{problem.ticket}}</a></p>
         </div>
       </div>
       <hr>

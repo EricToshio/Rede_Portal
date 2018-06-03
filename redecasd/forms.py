@@ -7,8 +7,7 @@ from .models import ReservationRede
 class ProblemForm(forms.ModelForm):
     class Meta:
         model = Problem
-        fields = ('name', 'localization', 'iniciativa', 'description',)
-
+        fields = ('name', 'localization', 'iniciativa', 'description', 'status')
 
 class ReservationForm(forms.ModelForm):
     class Meta:
