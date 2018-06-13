@@ -5,7 +5,7 @@
 {% load bootstrap3 %}
 
 {% block style %}
-    <link rel="stylesheet" type="text/css" href="{% static 'home/css/style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static "home/css/style.css" %}" />
 {% endblock %}
 
 {% block content %}
@@ -32,8 +32,8 @@
 {% include page_template %}
 
 {% block js %}
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="{% static 'home/js/el-pagination.js' %}"></script>
+    <script src="{% static "jQuery/jquery-1.11.1.js" %}"></script>
+    <script src="{% static "home/js/el-pagination.js" %}"></script>
 	<script>
         $.endlessPaginate({
         	paginateOnScroll: true,
