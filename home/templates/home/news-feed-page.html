@@ -5,19 +5,21 @@
 
 {% paginate news_list %}
 {% for news in news_list %}
-    <div class="js-news-item-filter container">
-        <div class="row">
-            <div class="col-xl box-padding">
-                <div class="news-item-box-wrapper background-blue">
-                    <div class="news-item">
+    <div class="js-news-item-filter container mb-4">
+        <div class="news-item">
+            <div class="row align-items-center box-padding">
+                <div class="col-sm-12 col-md-12 col-lg-4">
+                    <img src="{{ news.pic_url }}" class="img-fluid" alt="Responsive image"/>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-8">
+                    <a href="../news/?toshio_pistola={{news.id}}">
                         <h2>{{ news.title }}</h2>
-                        <h4>{{ news.sub_title }}</h4>
-                        <img src="{{ news.pic_url }}" height="128" width="128"/>
-                        <p>{{ news.text }}</p>
-                        <p>{{ news.pub_date }}</p>
-                        <div class="js-iniciativa-name news-item__tag">
-                            {{ news.iniciativa_name }}
-                        </div>
+                    </a>
+                    <h4>{{ news.sub_title }}</h4>
+                    <p class="text-justify">{{ news.text }}</p>
+                    <p>{{ news.pub_date }}</p>
+                    <div class="js-iniciativa-name news-item__tag">
+                        {{ news.iniciativa_name }}
                     </div>
                 </div>
             </div>

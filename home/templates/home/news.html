@@ -7,17 +7,19 @@
 {% block content %}
   <!-- Page Content -->
     <div class="container">
-      <div class="col-xl-12">
-          <h1>
-            {{news.title}}
-          </h1>
-          <h3>
-            {{news.sub_title}}
-          </h3>
-          <img src="{{news.pic_url}}" %}">
-          <p> {{news.text}} </p>
-          <p> {{news.iniciativa_name}} </p>
-          <p> {{news.pub_date}} </p>
+      <div class="row">
+        <div class="col-10 offset-1 text-center">
+            <h1>
+              {{news.title}}
+            </h1>
+            <h5>
+              {{news.sub_title}}
+            </h5>
+            <img src="{{news.pic_url}}"}" class="img-fluid" alt="Responsive image" max-width=""/>
+            <p class="text-justify"> {{news.text}} </p>
+            <p> {{news.iniciativa_name}} </p>
+            <p> {{news.pub_date}} </p>
+        </div>
       </div>
     </div>
 
