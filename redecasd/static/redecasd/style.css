@@ -138,8 +138,6 @@ input[type=submit]:hover {
     font-size: rem(32);
 }
 
-
-
 .problem-card{
     border: 1px solid rgba(0,0,0,.125);
     background-color: #fff;
