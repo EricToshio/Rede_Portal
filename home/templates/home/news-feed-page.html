@@ -12,11 +12,10 @@
                     <img src="{{ news.pic_url }}" class="img-fluid" alt="Responsive image"/>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-8">
-                    <a href="../news/?toshio_pistola={{news.id}}">
-                        <h2>{{ news.title }}</h2>
-                    </a>
+                    <h2><a href="../news/?toshio_pistola={{news.id}}">{{ news.title }}</a></h2>
                     <h4>{{ news.sub_title }}</h4>
-                    <p class="text-justify">{{ news.text }}</p>
+                    <p class="text-justify clamp">{{ news.text }}</p>
+                    <p><a href="../news/?toshio_pistola={{news.id}}">Ler notícia completa</a></p>
                     <p>{{ news.pub_date }}</p>
                     <div class="js-iniciativa-name news-item__tag">
                         {{ news.iniciativa_name }}
