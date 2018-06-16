@@ -6,6 +6,8 @@ from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.template.loader import render_to_string
 from django.http import JsonResponse
+from django.contrib.auth.decorators import login_required, user_passes_test
+
 import simplejson
 
 from issues_report.models import Problem
@@ -21,10 +23,14 @@ def schedule(request):
     context = {}
     return render(request, 'redecasd/reservas.html', context)
 
+@login_required
+@user_passes_test(lambda u: u.groups.filter(name='RedeCasd').count() == 1, login_url='/')
 def member(request):
     context = {'problem_list': Problem.objects.filter(iniciativa="RedeCasd").order_by('-pub_date')}
     return render(request, 'redecasd/dashboard/index.html', context)
 
+@login_required
+@user_passes_test(lambda u: u.groups.filter(name='RedeCasd').count() == 1, login_url='/')
 def membros_reserva(request):
     context = {'pedidos_de_reserva': ReservationRede.objects.all()}
     return render(request, 'redecasd/dashboard/reserva-sala.html', context)
