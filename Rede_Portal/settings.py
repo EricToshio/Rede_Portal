@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'bootstrap3',
     'bootstrap4',
+    "django_cron",
     'home.apps.HomeConfig',
     'redecasd.apps.RedecasdConfig',
     'issues_report.apps.IssuesReportConfig',
@@ -54,6 +55,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+CRON_CLASSES = [
+    "crons.update_server_status.ServerStatus",
+    # ...
 ]
 
 ROOT_URLCONF = 'Rede_Portal.urls'
