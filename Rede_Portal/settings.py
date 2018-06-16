@@ -135,3 +135,7 @@ STATICFILES_DIRS = [
 # Endless-pagination settings
 
 EL_PAGINATION_PER_PAGE = 5
+
+# Redirect to home URL after login (Default redirects to /accounts/profile/)
+
+LOGIN_REDIRECT_URL = '/'
