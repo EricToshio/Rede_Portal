@@ -7,10 +7,12 @@
 
 
 {% block header_item %}
+{% if user.is_authenticated %} 
     <li class="nav-item active">
-        <a class="nav-link nav-link--black" href="membros/">Login
+        <a class="nav-link nav-link--black" href="membros/">Área do membro
         </a>
     </li>
+{% endif %}
 {% endblock %}
 
 {% block content %}
