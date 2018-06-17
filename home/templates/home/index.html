@@ -12,6 +12,15 @@
   <link rel="stylesheet" type="text/css" href="{% static "home/css/home-carousel.css" %}">
 {% endblock %}
 
+{% block header_item %}
+{% if user.is_authenticated %} 
+    <li class="nav-item active">
+        <a class="nav-link nav-link--black" href="news-manager/">Área do membro
+        </a>
+    </li>
+{% endif %}
+{% endblock %}
+
 {% block content %}
   <div class="container">
     <h3 class="title-3">News</h3>

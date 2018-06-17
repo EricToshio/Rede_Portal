@@ -7,6 +7,7 @@ from django.urls import reverse
 from el_pagination.views import AjaxListView
 import sys
 import subprocess
+from django.contrib.auth.decorators import login_required, user_passes_test
 
 from .models import News
 
@@ -32,3 +33,11 @@ def news(request):
     id_parameter = request.GET['toshio_pistola']
     context = {'news': News.objects.filter(id=id_parameter)[0]}
     return render(request, 'home/news.html', context)
+
+@login_required
+@user_passes_test(lambda u: u.groups.filter(name='CASD').count() == 1, login_url='/')
+def news_manager(request):
+    context = {
+        'news_list': News.objects.order_by('-pub_date')
+    }
+    return render(request, 'home/manager/news-manager.html', context)

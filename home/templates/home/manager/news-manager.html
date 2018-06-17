@@ -1,0 +1,60 @@
+{% extends 'home/manager/base.html' %}
+{% load static %}
+
+{% block breadcrumb %}
+    <div class="breadcrumbs">
+        <div class="col-sm-4">
+            <div class="page-header float-left">
+                <div class="page-title">
+                    <h1>Dashboard</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="page-header float-right">
+                <div class="page-title">
+                    <ol class="breadcrumb text-right">
+                        <li class="active">Dashboard</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+    <div class="content mt-3">
+    </div>
+
+    <div class="content mt-3" id="problem-report-section" >
+        {% include 'home/manager/news-list.html' %}
+    </div>
+{% endblock %}
+
+
+{% block modal %}
+    <div class="modal fade teste" id="problem-report-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block script %}
+    <script src="{% static "redecasd/js/problem-report-edit.js" %}"></script>
+    <script src="{% static "redecasd/js/problem-report-conditional-format.js" %}"></script>
+    
+    <script type="text/javascript">
+    $("#filters :checkbox").click(function() {
+       $(".problem_list").hide();
+       $("#filters :checkbox:checked").each(function() {
+           $("." + $(this).val()).show();
+       });
+       updateColor();
+    });
+    </script>
+
+{% endblock %}

@@ -1,7 +1,5 @@
     
-    body{
-    background-color: #f9f9f9;
-    }
+    
     .border-solid{
     border: 1px solid #000 !important;
     }
@@ -18,13 +16,15 @@
     .box-padding{
     padding: 10px;
     }
-    .redecasd-box-wrapper{
-    padding: 10px;
-    border: 1px solid #e1e1e1;
+.redecasd-box-wrapper{
+    background-color: #17a2b8;
     border-radius: 3px;
+    border: 1px solid rgba(0,0,0,.125);
+    color: #fff;
     height: 100%;
-    background-color: #fff;
-    }
+    padding: 10px;
+}
+
     .redecasd-box--help > h1{
     /*color: #4d5d96;*/
     color: #f8f9fa;
@@ -45,4 +45,36 @@
     .row-height{
         min-height: 250px;
     }
+
+.redecasd-box-card > h4{
+    font-size: 32px;
+    text-align: center;
+    font-weight: 400;
+}
+
+.redecasd-box-card {
+    max-height: 225px;
+}
+
+.redecasd-box-card > h3{
+    font-size: 45px;
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    /*transform: translateY(+50%);*/
+}
+
+.redecasd-box-card > a{
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    /*transform: translateY(+50%);*/
+}
+
+
+
+
+
     

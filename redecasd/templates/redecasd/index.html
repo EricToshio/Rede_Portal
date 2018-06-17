@@ -1,18 +1,19 @@
 {% extends 'base.html' %}
-
+{% load bootstrap4 %}
+{% load bootstrap3 %}
 {% load static %}
+
 {% block style %}
     <link rel="stylesheet" type="text/css" href="{% static "redecasd/css/redecasd-general.css" %}">
 {% endblock %}
 
-
 {% block header_item %}
-{% if user.is_authenticated %} 
-    <li class="nav-item active">
-        <a class="nav-link nav-link--black" href="membros/">Área do membro
-        </a>
-    </li>
-{% endif %}
+    {% if user.is_authenticated %}
+        <li class="nav-item active">
+            <a class="nav-link nav-link--black" href="membros/">Área do membro
+            </a>
+        </li>
+    {% endif %}
 {% endblock %}
 
 {% block content %}
@@ -27,43 +28,44 @@
         </div>
     </div>
     <div class="container">
-        <div class="row margin-box row-height">
+        <div class="row row-height">
+            
             <div class="col-lg-3 col-sm-6 box-padding">
-                <div class="redecasd-box-wrapper background-blue">
-                    <div class="redecasd-box--help">
-                        <h1>Reservar a sala</h1>
-                        <a href="reservas/">
-                            <button type="button" class="btn btn-light">Clique aqui</button>
-                        </a>
+                <div class="redecasd-box-wrapper">
+                    <div class="redecasd-box-card">
+                        <h4>Status</h4>
+                        <h3>
+                        {{redecasd_status.origin}}
+                        </h3>
                     </div>
                 </div>
             </div>
             <div class="col-lg-3 col-sm-6 box-padding">
-                <div class="redecasd-box-wrapper background-blue">
-                    <div class="redecasd-box--help">
-                        <h1>Problemas com a RedeCasd?</h1>
-                        <a href="../reportar_problemas">
-                            <button type="button" class="btn btn-light">Clique aqui</button>
-                        </a>
+                <div class="redecasd-box-wrapper">
+                    <div class="redecasd-box-card">
+                        <h4>Status</h4>
+                        <h3>
+                            Horrivis
+                        </h3>
                     </div>
                 </div>
             </div>
             <div class="col-lg-3 col-sm-6 box-padding">
-                <div class="redecasd-box-wrapper background-blue">
-                    <div class="redecasd-box--help">
-                        <h1>Problemas com a RedeCasd?</h1>
-                        <a href="../reportar_problemas">
-                            <button type="button" class="btn btn-light">Clique aqui</button>
-                        </a>
+                <div class="redecasd-box-wrapper">
+                    <div class="redecasd-box-card">
+                        <h4>Usuários na rede</h4>
+                        <h3>
+                            <span class="js-count">{{redecasd_status.users_online}}</span>
+                        </h3>
                     </div>
                 </div>
             </div>
             <div class="col-lg-3 col-sm-6 box-padding">
-                <div class="redecasd-box-wrapper background-blue">
-                    <div class="redecasd-box--help">
-                        <h1>Problemas com a RedeCasd?</h1>
-                        <a href="../reportar_problemas">
-                            <button type="button" class="btn btn-light">Clique aqui</button>
+                <div class="redecasd-box-wrapper"  style="background-color: #000">
+                    <div class="redecasd-box-card">
+                        <h4 style="color: red;">Rede_Sec</h4>
+                        <a href="">
+                            <button type="button" class="btn btn-light">Informações</button>
                         </a>
                     </div>
                 </div>
@@ -71,11 +73,31 @@
         </div>
     </div>
     <div class="container">
-        <div class="row margin-box row-height">
+        <div class="row row-height">
             <div class="col-lg-3 col-sm-6 box-padding">
-                <div class="redecasd-box-wrapper background-blue">
-                    <div class="redecasd-box--help">
-                        <h1>Material dos treinamentos</h1>
+                <div class="redecasd-box-wrapper">
+                    <div class="redecasd-box-card">
+                        <h4>Material dos treinamentos</h4>
+                        <a href="">
+                            <button type="button" class="btn btn-light">Clique aqui</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 box-padding">
+                <div class="redecasd-box-wrapper">
+                    <div class="redecasd-box-card">
+                        <h4>Reservar a sala</h4>
+                        <a href="reservas/">
+                            <button type="button" class="btn">Clique aqui</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 box-padding">
+                <div class="redecasd-box-wrapper">
+                    <div class="redecasd-box-card">
+                        <h4>Problemas com a RedeCasd?</h4>
                         <a href="../reportar_problemas">
                             <button type="button" class="btn btn-light">Clique aqui</button>
                         </a>
@@ -83,30 +105,10 @@
                 </div>
             </div>
             <div class="col-lg-3 col-sm-6 box-padding">
-                <div class="redecasd-box-wrapper background-blue">
-                    <div class="redecasd-box--help">
-                        <h1>Status da rede</h1>
-                        <a href="../reportar_problemas">
-                            <button type="button" class="btn btn-light">Clique aqui</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 box-padding">
-                <div class="redecasd-box-wrapper background-blue">
-                    <div class="redecasd-box--help">
-                        <h1>Número de usuários na rede</h1>
-                        <a href="../reportar_problemas">
-                            <button type="button" class="btn btn-light">Clique aqui</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 box-padding">
-                <div class="redecasd-box-wrapper background-blue">
-                    <div class="redecasd-box--help">
-                        <h1>Inscrição para o PS 2018.2</h1>
-                        <a href="../reportar_problemas">
+                <div class="redecasd-box-wrapper">
+                    <div class="redecasd-box-card">
+                        <h4>Prestação de contas</h4>
+                        <a href="">
                             <button type="button" class="btn btn-light">Clique aqui</button>
                         </a>
                     </div>
@@ -116,5 +118,29 @@
     </div>
 {% endblock %}
 
+{% block script %}
 
+    <script type="text/javascript">
+        ( function ( $ ) {
+            "use strict";
+            $('.js-count').each(function () {
+                $(this).prop('Counter',0).animate({
+                    Counter: $(this).text()
+                }, {
+                    duration: 3000,
+                    easing: 'swing',
+                    step: function (now) {
+                        $(this).text(Math.ceil(now));
+                    }
+                });
+            });
 
+            var cw = $('.redecasd-box-card').width();
+            $('.redecasd-box-card').css({
+            'height': (cw-20) + 'px'
+            });
+
+        } )( jQuery );
+
+    </script>
+{% endblock %}

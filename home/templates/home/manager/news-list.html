@@ -1,0 +1,35 @@
+{% for news in news_list %}
+	<div class="col-xl-12 col-lg-12  problem_list {{problem.status}}">
+	    <div class="problem-card">
+	      <div class="row">
+	      	<div class="col-xl-10">
+		      <h5>Título</h5>
+	          <p>{{news.title}}</p>
+	      	</div>
+	      	<div class="col-xl-2" style="width: 150px">
+	        <button type="button"
+	        class="btn btn-warning btn-sm js-update"
+	        data-url="{% url 'home:news_manager' %}"
+	        data-toggle="modal">
+	        <span class="glyphicon glyphicon-search"></span> Edit
+	        </button>
+		    </div>
+		   </div>
+	      <hr>
+	      <div class="row">
+	        <div class="col-xl-4 col-lg-12">
+	          <h5> Iniciativa </h5>
+	          <p> {{news.iniciativa_name}} </p>
+	        </div>
+	        <div class="col-xl-4 col-lg-12">
+	          <h5> Publicado por </h5>
+	          <p></p>
+	        </div>
+	        <div class="col-xl-4 col-lg-12">
+	          <h5> Data</h5>
+	          <p> {{news.pub_date}} </p>
+	        </div>
+	      </div>
+	    </div>
+	</div>
+{% endfor %}
