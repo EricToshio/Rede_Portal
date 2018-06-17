@@ -4,6 +4,7 @@ django-bootstrap3==10.0.1
 django-bootstrap4==0.0.6
 django-el-pagination==3.2.4
 django-cron==0.5.1
+ipgetter==0.7
 Pillow==5.1.0
 pytz==2018.4
 snakeviz==0.4.2
