@@ -1,0 +1,9 @@
+To proper work of the project is necessary run this comand EVERY MINUTE:
+'python manage.py runcrons'
+
+add using this steps:
+1) $ crontab -e 
+2) add "* * * * * /YOUR PATH/Rede_Portal/cron.sh"
+
+obs.: maybe there will be a problem in cron.sh, so fix it =D
+

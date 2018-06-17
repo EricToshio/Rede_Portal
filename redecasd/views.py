@@ -15,6 +15,7 @@ from .models import ReservationRede
 from .forms import ProblemForm, ReservationForm
 from .helpers import redecasd_status
 
+a="ligado"
 def index(request):
     context = redecasd_status();
     print(request.COOKIES)

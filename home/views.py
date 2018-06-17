@@ -5,8 +5,6 @@ from django.http import Http404
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from el_pagination.views import AjaxListView
-import sys
-import subprocess
 from django.contrib.auth.decorators import login_required, user_passes_test
 
 from .models import News
@@ -15,7 +13,6 @@ def index(request):
     context = {'news_list_1': News.objects.order_by('-pub_date')[1:3],
                'news_list_2': News.objects.order_by('-pub_date')[3:5],
     		   'main_news': News.objects.order_by('-pub_date')[0]}
-    subprocess.call([sys.executable, 'manage.py', 'runcrons'])
     return render(request, 'home/index.html', context)
 
 def news_feed(request,
