@@ -15,22 +15,15 @@
           <p> Membro </p>
         </div>
         <div class="col-xl-3" style="width: 150px">
+          
           <button type="button"
-          class="btn btn-success btn-sm js-reservation-positive"
-          data-number=""
+          class="btn btn-danger btn-sm js-member-remove"
+          data-number="{{membro.id}}"
           data-toggle="modal">
-          <span class="glyphicon glyphicon-search"></span> Autorizar
-          </button>
-          <button type="button"
-          class="btn btn-danger btn-sm js-reservation-negative"
-          data-number=""
-          data-toggle="modal">
-          <span class="glyphicon glyphicon-search"></span> Negar
+            <span class="glyphicon glyphicon-search"></span> Remover do grupo
           </button>
         </div>
       </div>
-      
-      
     </div>
   </div>
 {% endfor %}

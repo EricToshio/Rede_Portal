@@ -23,11 +23,33 @@
 {% endblock %}
 
 {% block content %}
-    <div class="content mt-3" id="reservation_request_list">
+
+    <div class="content mt-3" id="member_search">    
+        <div class="col-xl-12 col-lg-12">
+            <div class="problem-card">
+              <div class="row">
+                <div class="col-xl-8">
+                    <input style="margin:0" type="text" id="js-search-user-email" placeholder="E-mail do novo membro...">
+                </div>
+                <div class="col-xl-4">
+                    <button style="height: 100%; width: 100%;" type="button" class="btn btn-info js-button-search-email">
+                       Pesquisar
+                    </button>
+                </div>
+              </div>
+              <div id="member_search_result">
+
+              </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="content mt-3" id="member_list">
         {% include 'redecasd/includes/partial_member_manage.html' %}
     </div>
 {% endblock %}
 
 {% block script %}
-    <script src="{% static "redecasd/js/reservations_manage.js" %}"></script>
+    <script src="{% static "redecasd/js/member-manage.js" %}"></script>
 {% endblock %}
