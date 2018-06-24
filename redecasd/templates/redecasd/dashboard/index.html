@@ -2,6 +2,14 @@
 {% load static %}
 
 
+{% block style %}
+<style type="text/css">
+    .list-style > ul{
+        list-style-type: none !important;
+    }
+</style>
+{% endblock %}
+
 {% block breadcrumb %}
     <div class="breadcrumbs">
         <div class="col-sm-4">
@@ -22,24 +30,24 @@
         </div>
     </div>
 {% endblock %}
-
-
 {% block content %}
+
+
     <div class="content mt-3">
         <div class="col-xl-12 col-lg-12">
             <div class="problem-card">
                 <div class="row">
                     <div id="filters" class="col-xl-12">
                         <div class="col-xl-4">
-                            <input type="checkbox" value="enviado" id="filter-enviado" checked/>
+                            <input type="checkbox" value="Enviado" id="filter-enviado" checked/>
                             <label style="margin:0;" for="enviado">enviado</label>
                         </div>
                         <div class="col-xl-4">
-                            <input type="checkbox" value="avaliacao" id="filter-em-avaliacao" checked/>
+                            <input type="checkbox" value="Em avaliação" id="filter-em-avaliacao" checked/>
                             <label style="margin:0;" for="filter-em-avaliacao">avaliacao</label>
                         </div>
                         <div class="col-xl-4">
-                            <input type="checkbox" value="resolvido" id="filter-resolvido" checked/>
+                            <input type="checkbox" value="Resolvido" id="filter-resolvido" checked/>
                             <label style="margin:0;" for="filter-resolvido">resolvido</label>
                         </div>
                     </div>
@@ -52,8 +60,6 @@
         {% include 'redecasd/includes/partial_report_problem_list.html' %}
     </div>
 {% endblock %}
-
-
 {% block modal %}
     <div class="modal fade teste" id="problem-report-modal">
         <div class="modal-dialog">
@@ -62,20 +68,19 @@
         </div>
     </div>
 {% endblock %}
-
-
 {% block script %}
     <script src="{% static "redecasd/js/problem-report-edit.js" %}"></script>
     <script src="{% static "redecasd/js/problem-report-conditional-format.js" %}"></script>
     
     <script type="text/javascript">
     $("#filters :checkbox").click(function() {
-       $(".problem_list").hide();
-       $("#filters :checkbox:checked").each(function() {
-           $("." + $(this).val()).show();
-       });
-       updateColor();
+    $(".problem_list").hide();
+    $("#filters :checkbox:checked").each(function() {
+    $("." + $(this).val()).show();
+    });
+    updateColor();
     });
     </script>
+
 
 {% endblock %}

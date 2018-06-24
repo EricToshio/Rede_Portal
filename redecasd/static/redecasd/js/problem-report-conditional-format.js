@@ -1,8 +1,8 @@
 var updateColor = function() {
     var highlights = {
-        "enviado": "red",
-        "avaliacao": "blue",
-        "resolvido": "green",
+        "Enviado": "red",
+        "Em avaliação": "blue",
+        "Resolvido": "green",
     }
 
     $(".js-problem-card__status").each(function() {

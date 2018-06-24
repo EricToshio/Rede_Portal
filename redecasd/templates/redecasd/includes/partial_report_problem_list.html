@@ -6,9 +6,14 @@
           <h5>Status</h5>
           <p class="js-problem-card__status">{{problem.status}}</p>
         </div>
-        <div class="col-xl-3">
+        <div class="col-xl-6">
           <h5>Responsável</h5>
-          <p> Eric Toshio </p>
+          <p>
+            {% for member in problem.people_in_charge.all %}
+              <span>{{member}} / </span>
+            {% endfor %}
+       
+          </p>
         </div>
         <div class="col-xl-3" style="width: 150px">
           <button type="button"

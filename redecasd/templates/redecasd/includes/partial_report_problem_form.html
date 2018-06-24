@@ -1,3 +1,21 @@
 
+Status
+{{form.status}}
 
-{{form}}
+Iniciativa
+{{form.iniciativa}}
+
+Membros
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Membros encarregados
+  </button>
+  <div class="dropdown-menu" >
+    {{form.people_in_charge}}
+  </div>
+</div>
+
+{{form.name.as_hidden}}
+{{form.localization.as_hidden}}
+{{form.description.as_hidden}}
+
