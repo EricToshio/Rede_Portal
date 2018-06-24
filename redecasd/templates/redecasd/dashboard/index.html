@@ -26,18 +26,24 @@
 
 {% block content %}
     <div class="content mt-3">
-        <div id="filters">
-            <div class="col-xl-4">
-                <input type="checkbox" value="enviado" id="filter-enviado" checked/>
-                <label for="enviado">enviado</label>
-            </div>
-            <div class="col-xl-4">
-                <input type="checkbox" value="avaliacao" id="filter-em-avaliacao" checked/>
-                <label for="filter-em-avaliacao">avaliacao</label>
-            </div>
-            <div class="col-xl-4">
-                <input type="checkbox" value="resolvido" id="filter-resolvido" checked/>
-                <label for="filter-resolvido">resolvido</label>
+        <div class="col-xl-12 col-lg-12">
+            <div class="problem-card">
+                <div class="row">
+                    <div id="filters" class="col-xl-12">
+                        <div class="col-xl-4">
+                            <input type="checkbox" value="enviado" id="filter-enviado" checked/>
+                            <label style="margin:0;" for="enviado">enviado</label>
+                        </div>
+                        <div class="col-xl-4">
+                            <input type="checkbox" value="avaliacao" id="filter-em-avaliacao" checked/>
+                            <label style="margin:0;" for="filter-em-avaliacao">avaliacao</label>
+                        </div>
+                        <div class="col-xl-4">
+                            <input type="checkbox" value="resolvido" id="filter-resolvido" checked/>
+                            <label style="margin:0;" for="filter-resolvido">resolvido</label>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

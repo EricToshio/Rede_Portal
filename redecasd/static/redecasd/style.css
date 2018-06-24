@@ -143,6 +143,7 @@ input[type=submit]:hover {
     background-color: #fff;
     padding: 15px;
     margin-bottom: 8px;
+    height: auto;
 }
 
 .problem-card h5{

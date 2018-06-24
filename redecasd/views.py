@@ -7,6 +7,7 @@ from django.urls import reverse
 from django.template.loader import render_to_string
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib.auth.models import User
 
 import simplejson
 
@@ -36,6 +37,12 @@ def member(request):
 def membros_reserva(request):
     context = {'pedidos_de_reserva': ReservationRede.objects.all()}
     return render(request, 'redecasd/dashboard/reserva-sala.html', context)
+
+@login_required
+@user_passes_test(lambda u: u.groups.filter(name='RedeCasd').count() == 1, login_url='/')
+def membros_manage(request):
+    context = {'membros': User.objects.filter(groups__name="RedeCasd")}
+    return render(request, 'redecasd/dashboard/membros-gerenciar.html', context)
 
 def membros_reserva_positive(request, modo, pk):
     reservation = ReservationRede.objects.get(pk=pk)

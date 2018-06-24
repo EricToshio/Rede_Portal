@@ -1,0 +1,36 @@
+{% for membro in membros %}
+  <div class="col-xl-12 col-lg-12">
+    <div class="problem-card">
+      <div class="row">
+        <div class="col-xl-3">
+          <h5> Nome </h5>
+          <p> {{membro.username}} </p>
+        </div>
+        <div class="col-xl-3">
+          <h5> Time </h5>
+          <p> VASP </p>
+        </div>
+        <div class="col-xl-3">
+          <h5> Cargo </h5>
+          <p> Membro </p>
+        </div>
+        <div class="col-xl-3" style="width: 150px">
+          <button type="button"
+          class="btn btn-success btn-sm js-reservation-positive"
+          data-number=""
+          data-toggle="modal">
+          <span class="glyphicon glyphicon-search"></span> Autorizar
+          </button>
+          <button type="button"
+          class="btn btn-danger btn-sm js-reservation-negative"
+          data-number=""
+          data-toggle="modal">
+          <span class="glyphicon glyphicon-search"></span> Negar
+          </button>
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+{% endfor %}

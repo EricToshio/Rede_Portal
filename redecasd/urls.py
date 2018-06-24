@@ -6,6 +6,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('membros/', views.member, name='member'),
     path('membros/reservas', views.membros_reserva, name='membros_reserva'),
+    path('membros/gerenciar-membros', views.membros_manage, name='membros_manage'),
     path('membros/reservas/<slug:modo>/<int:pk>', views.membros_reserva_positive, name='membros_reserva_positive'),
     path('reservas/', views.schedule, name='schedule'),
     path('membros/update/<int:pk>', views.problem_report_update, name='problem_report_update'),
