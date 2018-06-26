@@ -31,62 +31,27 @@
                 </div>
             </div>
             <div class="col-xl-6 col-md-12 border-box">
-                <h1 class="issues_report-form__title">Consulta</h1>
+                <h1 class="issues_report-form__title hidden-lg">Consulta</h1>
                 <div class="issues_report-form">
                     <form action="./ticket" method="post">
                         {% csrf_token %}
                         {{ ticket_form }}
                         <input type="submit" value="Consultar" />
                     </form>
-                    <div>
-                        Seus tickets:
-                    </div>
-                    <div style="max-height: 200px; overflow: scroll;">
-                        {% for ticket in ticket_cookies %}
-                            <div>
-                                <a href="./ticket/{{ticket}}">{{ticket}}</a>
-                            </div>
-                        {% endfor %}
-                    </div>
+                    {% if ticket_cookies %}
+                        <div>
+                            Seus tickets:
+                        </div>
+                        <div style="max-height: 200px; overflow-y: scroll;">
+                            {% for ticket in ticket_cookies %}
+                                <div>
+                                    <a href="./ticket/{{ticket}}">{{ticket}}</a>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="container">
-        <hr>
-        <h2 class="public-problem__title"> Problemas já relatados </h2>
-        <div class="col-xl-12 col-lg-12">
-            {% for problem in problems_list %}
-                <div class="public-problem-card">
-                    
-                    <div class="row">
-                        <div class="col-xl-4 col-lg-12">
-                            <h5> Nome </h5>
-                            <p> {{problem.name}} </p>
-                        </div>
-                        <div class="col-xl-4 col-lg-12">
-                            <h5> Apartamento </h5>
-                            <p> {{problem.localization}} </p>
-                        </div>
-                        <div class="col-xl-4 col-lg-12">
-                            <h5> Data</h5>
-                            <p> {{problem.pub_date}} </p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-12 col-lg-12">
-                            <h5> Reclamação para:</h5>
-                            <p> {{problem.iniciativa}} </p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-12 col-lg-12">
-                            <h5> Descrição </h5>
-                            <p> {{problem.description}} </p>
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
         </div>
     </div>
     

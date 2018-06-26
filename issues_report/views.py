@@ -33,7 +33,7 @@ def index(request):
             cookie_list = eval(cookie_list)
             cookie = str(issue.ticket)
             cookie_list.append(cookie)
-            response.set_cookie('ticket',cookie_list)
+            response.set_cookie('ticket',cookie_list,max_age=60*60*24*7) # 1 semana
             return response
 
         #context = {'problems_list': Problem.objects.order_by('-pub_date'),'form': form}
