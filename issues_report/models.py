@@ -10,7 +10,7 @@ class Problem(models.Model):
     description = models.CharField(max_length=200)
     pub_date = models.DateTimeField('date published')
     ticket = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
-    status = models.CharField(default="enviado",max_length=20)
+    status = models.CharField(default="Enviado",max_length=20)
     people_in_charge = models.ManyToManyField(User, blank=True)
     
     def __str__(self):

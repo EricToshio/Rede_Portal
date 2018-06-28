@@ -28,7 +28,7 @@ def news_feed(request,
     return render(request, template, context)
 
 def news(request):
-    id_parameter = request.GET['toshio_pistola']
+    id_parameter = request.GET['id']
     context = {'news': News.objects.filter(id=id_parameter)[0]}
     return render(request, 'home/news.html', context)
 
@@ -55,42 +55,24 @@ def news_create(request):
 
 def news_remove(request, pk):
     news = get_object_or_404(News, pk=pk)
-
-    if request.method == 'POST':
-        form = NewsForm(request.POST, instance=news)
-        news.delete()
-    else:
-        form = NewsForm(instance=news)
+    news.delete()
 
     context = {
-        'form': form,
+        'news_list': News.objects.order_by('-pub_date')
     }
-    return render(request, 'home/manager/news-edit.html', context)
+    return render(request, 'home/manager/news-manager.html', context)
 
 def news_update(request, pk):
     news = get_object_or_404(News, pk=pk)
     if request.method == 'POST':
         form = NewsForm(request.POST, instance=news)
+        if form.is_valid():
+            form.save()
     else:
         form = NewsForm(instance=news)
 
     context = {
         'form': form,
+        'news': news,
     }
-    return save_news_form(request, 'home/manager/news-edit.html', context)
-
-def save_news_form(request, template_name, form):
-    data = dict()
-    if request.method == 'POST':
-        if form.is_valid():
-            form.save()
-            data['form_is_valid'] = True
-            problems = Problem.objects.filter(iniciativa="RedeCasd").order_by('-pub_date')
-            data['html_problem_list'] = render_to_string('home/manager/news_list.html', {
-                'problem_list': problems
-            })
-        else:
-            data['form_is_valid'] = False
-    context = {'form': form}
-    data['html_form'] = render_to_string(template_name, context, request)
-    return JsonResponse(data)
+    return render(request, 'home/manager/news-edit.html', context)
