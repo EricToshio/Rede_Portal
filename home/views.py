@@ -55,15 +55,10 @@ def news_create(request):
 
 def news_remove(request, pk):
     news = get_object_or_404(News, pk=pk)
-
-    if request.method == 'POST':
-        form = NewsForm(request.POST, instance=news)
-        news.delete()
-    else:
-        form = NewsForm(instance=news)
+    news.delete()
 
     context = {
-        'form': form,
+        'news_list': News.objects.order_by('-pub_date')
     }
     return render(request, 'home/manager/news-manager.html', context)
 
