@@ -55,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 CRON_CLASSES = [
@@ -140,6 +141,8 @@ STATICFILES_DIRS = [
     '/static/',
 ]
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 # Endless-pagination settings
 
 EL_PAGINATION_PER_PAGE = 5
@@ -147,3 +150,5 @@ EL_PAGINATION_PER_PAGE = 5
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
 
 LOGIN_REDIRECT_URL = '/'
+
+django_heroku.settings(locals())
