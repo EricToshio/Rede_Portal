@@ -1,0 +1,18 @@
+
+    .no-background-color{
+      background-color: transparent !important;
+    }
+    .color-yellow,
+    .color-yellow div,
+    .color-yellow span {
+      background-color: yellow; /* background color */
+      color: black;
+      border-color: yellow !important;           /* text color */
+    }
+    .color-green,
+    .color-green div,
+    .color-green span {
+      background-color: green; /* background color */
+      color: black;
+      border-color: green !important;           /* text color */
+    }

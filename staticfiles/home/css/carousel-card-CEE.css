@@ -1,0 +1,51 @@
+
+.card-CEE{
+	height: 350px;
+	margin-bottom: 12px;
+	box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+	border-radius: 4px;
+	background-color: #fff;
+}
+
+.card-CEE > img{
+	max-height: 50%;
+}
+
+.card-CEE-text{
+	padding: 5px;
+	margin: 0;
+}
+
+.card-CEE-text > li{
+	list-style-type: none;
+}
+
+.card-CEE-text li h4 {
+	color: #868e96;
+	font-size: 12px;
+	margin: 0;
+	width: 30%;
+}
+
+.card-CEE-text li h3 {
+	color: #000;
+	font-size: 15px;
+	margin: 0;
+	text-align: center;
+	/*margin-left: 16px;*/
+}
+
+.card-CEE-text li p {
+	color: #000;
+	font-size: 14px;
+	margin: 0;
+	text-align: center;
+}
+
+.card-CEE-text li hr {
+	margin: 0;
+}
+
+.card-CEE-text > p{
+	margin: 0;
+}
