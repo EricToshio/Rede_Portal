@@ -65,7 +65,7 @@ def news_remove(request, pk):
     context = {
         'form': form,
     }
-    return render(request, 'home/manager/news-edit.html', context)
+    return render(request, 'home/manager/news-manager.html', context)
 
 def news_update(request, pk):
     news = get_object_or_404(News, pk=pk)
