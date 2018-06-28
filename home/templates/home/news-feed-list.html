@@ -31,7 +31,9 @@
 
 {% include page_template %}
 
-{% block js %}
+{% endblock %}
+
+{% block script %}
     <script src="{% static "jQuery/jquery-1.11.1.js" %}"></script>
     <script src="{% static "home/js/el-pagination.js" %}"></script>
 	<script>
@@ -60,5 +62,4 @@
         }
     }
     </script>
-{% endblock %}
 {% endblock %}
