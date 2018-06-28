@@ -1,0 +1,80 @@
+    
+    
+    .border-solid{
+    border: 1px solid #000 !important;
+    }
+    .margin-box{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    }
+    .no-padding{
+    padding: 0;
+    }
+    .no-background-color{
+    background-color: transparent;
+    }
+    .box-padding{
+    padding: 10px;
+    }
+.redecasd-box-wrapper{
+    background-color: #17a2b8;
+    border-radius: 3px;
+    border: 1px solid rgba(0,0,0,.125);
+    color: #fff;
+    height: 100%;
+    padding: 10px;
+}
+
+    .redecasd-box--help > h1{
+    /*color: #4d5d96;*/
+    color: #f8f9fa;
+    font-size: 24px;
+    font-weight: 800;
+    text-align: center;
+    }
+    .redecasd-box--help > a{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50%;
+    }
+    .background-blue{
+    background-color: #fff;
+    }
+    
+    .row-height{
+        min-height: 250px;
+    }
+
+.redecasd-box-card > h4{
+    font-size: 32px;
+    text-align: center;
+    font-weight: 400;
+}
+
+.redecasd-box-card {
+    max-height: 225px;
+}
+
+.redecasd-box-card > h3{
+    font-size: 45px;
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    /*transform: translateY(+50%);*/
+}
+
+.redecasd-box-card > a{
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    /*transform: translateY(+50%);*/
+}
+
+
+
+
+
+    
