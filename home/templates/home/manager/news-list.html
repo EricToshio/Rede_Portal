@@ -1,5 +1,5 @@
 {% for news in news_list %}
-	<div class="col-xl-12 col-lg-12  problem_list {{problem.status}}">
+	<div class="col-xl-12 col-lg-12  problem_list {{news.status}}">
 	    <div class="problem-card">
 	      <div class="row">
 	      	<div class="col-xl-10">
@@ -9,11 +9,17 @@
 	      	<div class="col-xl-2" style="width: 150px">
 	        <button type="button"
 	        class="btn btn-warning btn-sm js-update"
-	        data-url="{% url 'home:news_manager' %}"
+	        data-url="{% url 'home:news_update' news.id %}"
 	        data-toggle="modal">
 	        <span class="glyphicon glyphicon-search"></span> Edit
 	        </button>
-		    </div>
+	        <button type="button"
+	        class="btn btn-danger btn-sm js-update"
+	        data-url="{% url 'home:news_remove' news.id %}"
+	        data-toggle="modal">
+	        <span class="glyphicon glyphicon-search"></span> Delete
+	        </button>
+	    	</div>
 		   </div>
 	      <hr>
 	      <div class="row">

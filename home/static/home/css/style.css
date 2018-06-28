@@ -362,25 +362,25 @@ p.clamp{
  -webkit-box-orient: vertical;
 }
 
-.problem-card{
+.news-card{
     border: 1px solid rgba(0,0,0,.125);
     background-color: #fff;
     padding: 15px;
     margin-bottom: 8px;
 }
 
-.problem-card h5{
+.news-card h5{
     color: #868e96;
     font-size: 14px;
 }
 
-.problem-card p{
+.news-card p{
     font-size: 18px;
     color: #000;
     margin-bottom: 8px;
 }
 
-.problem-card hr{
+.news-card hr{
     border: 1px solid rgba(0,0,0,.125);
     padding: 0;
     margin: 3px 3px;
